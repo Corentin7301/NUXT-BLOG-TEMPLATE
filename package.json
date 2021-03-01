@@ -1,16 +1,23 @@
 {
-  "name": "blog",
+  "name": "nuxt-101",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "export": "nuxt export",
+    "serve": "nuxt serve",
+    "production": "npm run build && nuxt generate"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "@nuxt/content": "^1.13.1",
+    "nuxt": "^2.14.7",
+    "vue-rellax": "^0.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.3"
+  }
 }
