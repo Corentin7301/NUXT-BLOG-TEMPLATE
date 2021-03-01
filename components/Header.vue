@@ -88,6 +88,19 @@
         outline: none;
       }
     }
+      .fixed {
+        position: fixed;
+        width: 25px;
+        height: 25px;
+        bottom: 50px;
+        right: 30px;
+        z-index: 99;
+        cursor: pointer;
+      }
+
+      .none {
+        display: none;
+      }
   }
 
   // DESKTOP
@@ -107,19 +120,6 @@
         display: none;
       }
 
-      .fixed {
-        position: fixed;
-        width: 25px;
-        height: 25px;
-        bottom: 50px;
-        right: 30px;
-        z-index: 99;
-        cursor: pointer;
-      }
-
-      .none {
-        display: none;
-      }
     }
   }
 

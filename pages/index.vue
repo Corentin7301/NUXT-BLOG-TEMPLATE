@@ -33,14 +33,14 @@
   .container {
     margin: 0 auto;
     min-height: 100vh;
-    display: flex;
+    max-width: 100vw;
     background-color: $black;
     color: $white;
     text-decoration: none;
     position: relative;
 
     .article-content {
-      width: 75%;
+      width: 100%;
     }
 
 
@@ -94,6 +94,7 @@
         border: solid 1px $orange;
         border-radius: 5px;
         background-color: #1E1E1E;
+        width: 100%;
       }
 
       a {
@@ -109,34 +110,52 @@
 
 
     .menu {
-      position: fixed;
-      right: 80px;
-      width: 340px;
-      top: 100px;
+      display: none;
 
-      .toc2 {
-        color: $orange;
-        margin: 10px 0;
-        transition: 0.5s;
-        font-size: 14px;
 
-        &:hover {
-          color: $white;
-          transition: 0.3s;
-        }
+    }
+
+  }
+
+  @media screen and (min-width: 1216px) {
+    .container {
+        display: flex;
+      .article-content {
+        width: 75%;
       }
 
-      .toc3 {
-        margin: 10px 0 10px 15px;
-        transition: 0.5s;
-        font-size: 12px;
+      .menu {
+        display: block;
+        position: fixed;
+        right: 80px;
+        width: 340px;
+        top: 50px;
 
-        &:hover {
+        .toc2 {
           color: $orange;
-          transition: 0.3s;
+          margin: 15px 0 10px 0;
+          transition: 0.5s;
+          font-size: 14px;
+
+          &:hover {
+            color: $white;
+            transition: 0.3s;
+          }
+        }
+
+        .toc3 {
+          margin: 5px 0 5px 15px;
+          transition: 0.5s;
+          font-size: 12px;
+
+          &:hover {
+            color: $orange;
+            transition: 0.3s;
+          }
         }
       }
     }
+
 
   }
 
