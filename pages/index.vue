@@ -45,7 +45,7 @@
 
 
 
-    .article-content .nuxt-content-container .nuxt-content {
+    .article-content .nuxt-content {
       h1 {
         color: $orange;
         margin-bottom: 32px;

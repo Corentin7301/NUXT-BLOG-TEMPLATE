@@ -3,14 +3,14 @@ export default {
   ssr: false,
   target: 'static',
   head: {
-    title: 'Template NUXT',
+    title: 'Blog Corentin PERROUX',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Template NUXT starter kit description' }
+      { hid: 'description', name: 'description', content: 'Blog Corentin PERROUX' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       {
         rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'
       },
