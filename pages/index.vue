@@ -77,6 +77,10 @@
         line-height: 28px;
       }
 
+        code {
+          color: $orange;
+          font-family: 'DM Mono', monospace;
+        }
       pre {
         padding-left: 30px;
         background-color: #ebebeb;
