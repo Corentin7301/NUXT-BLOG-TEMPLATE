@@ -32,6 +32,7 @@
 <style lang="scss">
   .container {
     margin: 0 auto;
+    padding: 10px;
     min-height: 100vh;
     max-width: 100vw;
     background-color: $black;
@@ -120,6 +121,8 @@
   @media screen and (min-width: 1216px) {
     .container {
         display: flex;
+        padding: 0;
+
       .article-content {
         width: 75%;
       }
