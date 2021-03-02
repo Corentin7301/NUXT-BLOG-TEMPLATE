@@ -129,20 +129,17 @@
 
       .article-content {
         width: 75%;
+        margin-right: 50px;
       }
 
       .menu {
         display: block;
-        position: fixed;
-        right: 80px;
-        width: 340px;
-        top: 50px;
 
         .toc2 {
           color: $orange;
-          margin: 15px 0 10px 0;
+          margin: 7px 0 5px 0;
           transition: 0.5s;
-          font-size: 14px;
+          font-size: 12px;
 
           &:hover {
             color: $white;
@@ -153,7 +150,7 @@
         .toc3 {
           margin: 5px 0 5px 15px;
           transition: 0.5s;
-          font-size: 12px;
+          font-size: 10px;
 
           &:hover {
             color: $orange;

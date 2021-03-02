@@ -1643,6 +1643,3 @@ ssh-keygen -t rsa -C "ton-email" // Permet de générer une clé SSH
 [Openclassroom](https://openclassrooms.com/fr/courses/5641721-utilisez-git-et-github-pour-vos-projets-de-developpement)
 <br>
 [Git merge / Git rebase](https://www.atlassian.com/fr/git/tutorials/merging-vs-rebasing)
-
-TODO : 
-* faire une cheat sheet
