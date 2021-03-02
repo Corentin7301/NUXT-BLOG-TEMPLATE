@@ -35,7 +35,7 @@ Et bien Git va sauvegarder les deux versions du code, celle sans et celle avec l
 Oui ! sous forme de petit dossier cachés .git .
 
 Mais on utilise aussi des services d'hébergement comme GitHub ou GitLab (pour ne citer qu'eux pour l'instant) où l'on va stocker notre code ainsi que les différentes versions.
-C'est aussi grâce à cela que tu vas pouvoir bosser sur le projet de Michel, avec Raph et Cédric ou bien le projet open-source (Il faut bien que tout le monde puisse y accéder non ?).
+C'est aussi grâce à cela que tu vas pouvoir bosser sur le projet de Michel, avec Raph et Cédric ou bien le projet open-source (il faut bien que tout le monde puisse y accéder non ?).
 
 Il faut savoir que quand un fichier n'est pas modifié, le fichier n'est stocké qu'une seule fois. En revanche, comme je l'ai dis, si le fichier est modifié, les deux versions sont stockées.
 
@@ -87,7 +87,7 @@ git help
 
 Dans un premier temps, on va configurer rapidement Git.
 
-Dans ton terminal tu vas pouvoir "parler" à Git et interragire avec lui.
+Dans ton terminal tu vas pouvoir "parler" à Git et interagir avec lui.
 
 On va donc configuer Git avec la commande (attends avant de faire 😉):
 
@@ -127,7 +127,7 @@ Puis on va rentrer dans ce dossier :
 cd ./premier-projet-git
 ```
 
-et on va **initialier** le projet git dans **ce** dossier :
+et on va **initialiser** le projet git dans **ce** dossier :
 
 ```bash
 git init
@@ -153,7 +153,7 @@ git status
 ```
 ![git-status](https://res.cloudinary.com/corentin7301/image/upload/v1614094265/git-workflow-article/git_status_pw9lzi.png)
 
-Ca, ça veut dire qu'on a un fichier qui n'a pas été traqué, pas été 'stage'.
+Ça, ça veut dire qu'on a un fichier qui n'a pas été traqué, pas été 'stage'.
 En gros il faut lui dire que le fichier 'Readme.md' a été modifié et sera pris en compte pour le prochain commit (la prochaine 'sauvegarde').
 
 On va donc l'ajouter comme ceci :
@@ -161,7 +161,7 @@ On va donc l'ajouter comme ceci :
 ```bash
 git add Readme.md
 ```
-Et pour verifier on refait un :
+Et pour vérifier on refait un :
 
 ```bash
 git status
@@ -199,7 +199,7 @@ Pour le créer on va faire comme notre fichier Readme.md de tout à l'heure :
 ```bash
 touch .gitignore
 ```
-Et dedans on mettre par exemple tous les fichiers .tmp :
+Et dedans on met par exemple tous les fichiers .tmp :
 
 ![gitignore](https://res.cloudinary.com/corentin7301/image/upload/v1614096050/git-workflow-article/gitignore_s7evnc.png)
 
@@ -211,15 +211,13 @@ On va donc commit notre fichier .gitignore :
 
 ```bash
 git status
-
 git add --all
-
 git commit -m "add .gitignore"
 ```
 
 ### Mais, comment je peux voir mes commit du coup ?
 
-Parce que oui, c'est ça qui est interessant 🤷‍♂️
+Parce que oui, c'est ça qui est intéressant 🤷‍♂️
 
 Et bien avec cette ligne :
 
@@ -279,7 +277,7 @@ Pour nettoyer cela et revenir à "*tmp" on commence par le modifier dans notre f
 et on le commit :
 
 ```bash
-git add -all
+git add --all
 
 git commit -m "clean gitignore"
 ```
@@ -304,7 +302,7 @@ On est **sur** la "sauvegarde" 8bc2bdf (du nom "add gitignore").
 
 Nous sommes remonté dans le temps sur le commit "add gitignore" et avons donc toute la hiérarchie de fichier du moment précis où l'on a fait ce commit ("add gitignore").
 
-Il faut savoir que si tu veux changer quelque chose tu devra commiter, mais si tu commit et que tu reviens au "présent" avec : ```git checkout master``` le commit ne sera pas pris en compte, il sera enregistré mais pas pris en compte.
+Il faut savoir que si tu veux changer quelque chose tu devra commit, mais si tu commit et que tu reviens au "présent" avec : ```git checkout master``` le commit ne sera pas pris en compte, il sera enregistré mais pas pris en compte.
 
 Si l'on veut modifier le fichier gitignore pour revenir à celui du commit "add gitignore" (même si ici ça n'a pas d'utilité), on ferait :
 
@@ -315,7 +313,7 @@ puis on ferait un commit.
 
 Ce qu'on a fait, c'est qu'on a recupéré le fichier .gitignore à l'état du commit "add gitignore" et on a dit à git que c'était cette version qu'on va garder. En gros on revient en arrière.
 
-On récupère une ancienne version d'un fichier qu'on remet au goût du jour.
+On récupère une ancienne version d'un fichier que l'on remet au goût du jour.
 
 Pour revenir au présent on peut faire :
 
@@ -361,13 +359,13 @@ ce qui nous ouvre ça :
 
 ![git revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183293/git-workflow-article/revert_yr2utl.png)
 
-Il s'agit de Vim, c'est un éditeur de texte. On peut changer le nom du commit, ici "Revert "add index.html"", et pour terminer écris :wq ou sauvegardes le fichier puis fermes-le.
+Il s'agit de Vim, c'est un éditeur de texte. On peut changer le nom du commit, ici "Revert "add index.html"", et pour terminer écrire :wq ou sauvegarder le fichier puis fermer le fichier de l'éditeur (Ctrl + w).
 
 Avec un coup de ```git log``` on peut voir que notre revert a bien fonctionné :
 
 ![git log revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183740/git-workflow-article/git_log_revert_r008if.png)
 
-Si on regarde dans la l'arborescence, index.html n'est plus là :
+Si on regarde dans l'arborescence, index.html n'est plus là :
 
 ![git log revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183870/git-workflow-article/git_reverse_index_xxixpp.png)
 
@@ -453,7 +451,7 @@ Exemple :
 Sur "contact.html" on change le html en ajoutant :
 
 ```html
-    <h2>Voici comment me contacter :</h2>
+<h2>Voici comment me contacter :</h2>
 ```
 en dessous du ```<h1>``` déjà présent et on **stage**. (On ne commit pas !)
 
@@ -494,7 +492,7 @@ git reset --hard
 ```
 Et on peut voir que le "h2" a disparu, que notre zone de staging est propre et que notre dernier commit est toujours "add indexDeux.html contact.html article.html".
 
-#### **Permet de revenir en arrière jusqu'au commit en question, réinitialise la zone de staging tout en laissant votre dossier de travail en l'état. L'historique sera perdu (les commits suivant le commit en question seront perdus, mais pas vos modifications). Cette commande vous permet surtout de nettoyer l'historique en resoumettant un commit unique à la place de plusieurs "petits" commit.**
+#### **Permet de revenir en arrière jusqu'au commit en question, réinitialise la zone de staging tout en laissant votre dossier de travail en l'état. L'historique sera perdu (les commits suivant le commit en question seront perdus, mais pas vos modifications). Cette commande permet surtout de nettoyer l'historique en resoumettant un commit unique à la place de plusieurs "petits" commit.**
 
 ```bash
 git reset id-commit
@@ -543,7 +541,7 @@ git reset 293b535
 
 pour revenir au commit antécédent ("add indexDeux.html contact.html article.html") sans perdre les modifications.
 
-Maintenant, on va voir commit toutes nos modifications sous un seul commit :
+Maintenant, on va commit toutes nos modifications sous un seul commit :
 
 ```bash
 git add --all
@@ -562,7 +560,7 @@ git reset id-commit --hard
 
 ## Les branches
 
-Imagines que tu veuilles faire une fonctionnalité sur ton site mais que tu ne veuilles pas modifier ton code initial, celui qui est en ligne. Il te faudrait une sorte de dimmention parallèle... Et bien c'est exactement la définition des branches.
+Imagines que tu veuilles faire une fonctionnalité sur ton site mais que tu ne veuilles pas modifier ton code initial, celui qui est en ligne. Il te faudrait une sorte de dimension parallèle... Et bien c'est exactement la définition des branches.
 
 Les branches permettent un historique non linéaire, donc de travailler sur une fonctionnalité particulière sans polluer ton code principal.
 
@@ -684,7 +682,7 @@ Maintenant que nous avons fait notre nouvelle fonctionnalité (ajouter la page s
 
 On va appeler ça **merger**.
 
-Quand on **merge** un branche, on ramene une branche sur une autre et ainsi de la fusionne.
+Quand on **merge** une branche, on ramène une branche sur une autre et ainsi on la fusionne.
 
 On utilise :
 
@@ -712,7 +710,7 @@ On vient de rammener "add-page-story" sur "master" :
 
 ![gitkraken merge](https://res.cloudinary.com/corentin7301/image/upload/v1614191991/git-workflow-article/git_merge_fydf0h.png)
 
-Et si on regarde nos fichiers on a bien notre pas story.html qui est là et notre h3 dans indeDeux.html.
+Et si on regarde nos fichiers on a bien notre fichier story.html qui est là et notre h3 dans indexDeux.html.
 
 Magique non ? 🧙🏼‍♂️
 
@@ -725,7 +723,7 @@ Tout simplement avec :
 git branch -d nom-de-la-branche
 ```
 
-Bien sur si on supprime une branche sans l'avoir mergé, on perd tout ce qu'il y a dessus ! Donc **❗ Attention ❗**
+Bien sûr si on supprime une branche sans l'avoir mergé, on perd tout ce qu'il y a dessus ! Donc **❗ Attention ❗**
 
 Pour faire cela on doit faire :
 
@@ -737,11 +735,11 @@ git branch -D nom-de-la-branche
 
 ## Manipuler l'historique
 
-Ce n'est pas vraiment conseillé,mais des fois on peut en avoir besoin pour corriger un commit foireux ou pour préparer une branche avant de la merger.
+Ce n'est pas vraiment conseillé, mais des fois on peut en avoir besoin pour corriger un commit foireux ou pour préparer une branche avant de la merger.
 
 ### AMEND
 
-Amend est un argument de ```git commit```, il permet de rajouter des fichier en dans la zone de staging et l'inclure dans le commit précédent. Ca permet de corriger un oubli dans le dernier commit et de ne pas faire plusieurs commits pour la même chose.
+Amend est un argument de ```git commit```, il permet de rajouter des fichier dans la zone de staging et l'inclure dans le commit précédent. Ca permet de corriger un oubli dans le dernier commit et de ne pas faire plusieurs commits pour la même chose.
 
 ```bash
 git commit --amend
@@ -764,7 +762,7 @@ git commit -a -m "clean indexDeux"
 
 il nous reste seulement un ```<h1>``` et un ```<h2>```.
 
-Immaginons que nous avons **oublié** ce dernier ```<h2>``` lors de notre commit de "clean", on va alors le supprimer à son tour et pour réparer cet oubli on va l'inclure dans notre dernier commit :
+Imaginons que nous avons **oublié** ce dernier ```<h2>``` lors de notre commit de "clean", on va alors le supprimer à son tour et pour réparer cet oubli on va l'inclure dans notre dernier commit :
 
 ```bash
 git add indexDeux.html
@@ -924,12 +922,12 @@ Git va ouvrir un éditeur Vim comme ceci :
 Ou on va pouvoir modifier les commits avec ces commandes :
 
 ```js
-pick //permet de d'inclure le commit. On peut en profiter pour changer l'ordre des différents commit
-reword //permet d'inclure le commit tout en ayant la possibiliter de changer le message
-edit //permet d'éditer le commit. En séparant en plusieurs commits par exemple
-squash //combine le commit avec le commit du dessus et permet de changer le message du commit
-fixup //comme squash mais utilisera le message du commit situé au dessus
-exec //permet de lancer des commandes shell sur le commit
+pick // permet de d'inclure le commit. On peut en profiter pour changer l'ordre des différents commit
+reword // permet d'inclure le commit tout en ayant la possibiliter de changer le message
+edit // permet d'éditer le commit. En séparant en plusieurs commits par exemple
+squash // combine le commit avec le commit du dessus et permet de changer le message du commit
+fixup // comme squash mais utilisera le message du commit situé au dessus
+exec // permet de lancer des commandes shell sur le commit
 ```
 
 ## Le remisage
@@ -938,7 +936,7 @@ Le remisage est le fait de mettre de côté temporairement nos modifications **s
 
 ### STASH
 
-Elle va être utilisée pour mettre de côté toutes les modifications qui ont étés apportées au projet depuis le dernier commit.
+Elle va être utilisée pour mettre de côté toutes les modifications qui ont été apportées au projet depuis le dernier commit.
 
 ```bash
 git stash
@@ -948,7 +946,7 @@ Si on fait un coup de ```git status``` on verra qu'il n'y a plus rien dans les f
 
 ### STASH APPLY
 
-Pour **réappliquer** nos modifications stahsées on utilise :
+Pour **réappliquer** nos modifications stashées on utilise :
 
 ```bash
 git stash apply
@@ -962,7 +960,7 @@ git stash list
 ```
 
 ### STASH DROP
-Même lorsqu'il est "```apply```", le stash ne disparaîtra pas de la liste, pour supprimer le deriner stash on utilise :
+Même lorsqu'il est "```apply```", le stash ne disparaîtra pas de la liste, pour supprimer le dernier stash on utilise :
 
 ```bash
 git stash drop
@@ -998,7 +996,7 @@ git stash save "fix bug form"
 
 ## Mais tu n'avais pas parler de travailler à plusieurs ?
 
-...Parce que pour l'instant on ne travaille qu'en local... 🤔
+...parce que pour l'instant on ne travaille qu'en local... 🤔
 
 Et bien **si !** 
 
@@ -1089,8 +1087,8 @@ Pour envoyer sur notre dépot distant on fait :
 
 ```bash
 git push "nom-du-dépot-distant" "nom-de-la-branche"
-//ou
-git push --all //pour pousser toutes les branches
+// ou
+git push --all // pour pousser toutes les branches
 ```
 
 Ici :
@@ -1111,9 +1109,9 @@ On a bien notre branche master sur origin :
 On peut réessayer avec une nouvelle branche :
 
 ```bash
-git branch test //on créé une nouvelle branche
-git push origin test //on l'envoie sur origin
-git branch -r //on a notre nouvelle branche
+git branch test // on créé une nouvelle branche
+git push origin test // on l'envoie sur origin
+git branch -r // on a notre nouvelle branche
 ```
 
 Pour la supprimer on la supprime d'abord en local :
@@ -1145,7 +1143,7 @@ git pull origin master
 
 ```pull``` permet de **récupérer** les modifications.
 
-(Option) Pour **obliger** Git à faire des ```rebase``` plutôt que des ```merge``` lors des pull, vous pouvez modifier la configuration en faisant :
+(Option) Pour **obliger** Git à faire des ```rebase``` plutôt que des ```merge``` lors des pull, on peut modifier la configuration en faisant :
 
 ```bash
  git config --global branch.autosetuprebase always
@@ -1170,26 +1168,26 @@ git clone "lien-dépot-distant" --depth "nombre-de-commit-précédent-à-récup�
 
 Github, Gitlab, Bitbucket, ...
 
-Tous ces services sont des services d'hébèrgement.
+Tous ces services sont des services d'hébergement.
 
 Ils donnent accès à des dépots distants.
 
-C'est gràce à eux que tu pourras bosser avec Michel, Raph, Cédric ou sur le projet open-source.
+C'est grâce à eux que tu pourras bosser avec Michel, Raph, Cédric ou sur le projet open-source.
 
 Ici on va parler plus particulièrement de **Github**.
 
-Rapidement, Github est développé par Chris Wanstrath, PJ Hyett et Tom Preston-Werner en 2008, c'est toujours le service d'hébèregement de ce type préféré aux yeux de beaucoup de développeurs.
+Rapidement, Github est développé par Chris Wanstrath, PJ Hyett et Tom Preston-Werner en 2008, c'est toujours le service d'hébergement de ce type préféré de beaucoup de développeurs.
 
 Je te propose de te créer un compte sur le site de Github : [www.github.com](https://github.com/).
 
-Si tu ne comprends pas tout c'est normal, ce qui va nous intéresser ici (tu pourras découvrir le reste tout seul), cest les "**repositories**", c'est tout bonnement l'équivalent de notre dossier "remote" de tout à l'heure, ça va être tes **dépots distants**.
+Si tu ne comprends pas tout c'est normal, ce qui va nous intéresser ici (tu pourras découvrir le reste tout seul), c'est les "**repositories**", c'est tout bonnement l'équivalent de notre dossier "remote" de tout à l'heure, ça va être tes **dépots distants**.
 
 ### Clé SSH
 
 Avant de commencer à l'utiliser on va tout d'abord générer une clé ssh (c'est la clé que l'on va donner à Github.) :
 
 ```bash
-ssh-keygen -t rsa -C "ton-email" //entre ""
+ssh-keygen -t rsa -C "ton-email" // entre ""
 ```
 
 Il va te demander le chemin sur lequel tu veux le mettre, je te conseil : "```C:\Users/nom-d'utilisateur```".
@@ -1202,7 +1200,7 @@ La clé "**id_rsa.pub**" est le clé publique, c'est elle que l'on va utiliser.
 
 Si on l'ouvre avec un éditeur de texte on a une longue clé cryptée.
 
-Et bien on va la copier puis la coller dans l'onglet "Settings"/"SSH and GPG keys"/"New SSH key" et l'ajouter.
+Et bien on va la copier puis la coller dans l'onglet "Settings"/"SSH and GPG keys"/"New SSH key" de Github et l'ajouter.
 
 ### Nouveau repository
 
@@ -1242,7 +1240,7 @@ git remote add origin https://github.com/Corentin7301/projet-git-github.git
 Et pousser notre commit sur notre dépot distant :
 
 ```bash
-git push origin main //ma branche s'appelle "main"
+git push origin main // ma branche s'appelle "main"
 ```
 
 Maintenant si tu retourne sur Github et que tu rafraichis la page, tu peux voir ton magnifique **readme** qui apparaît !
@@ -1263,7 +1261,7 @@ C'est grâce à cela que le(s) développeur(s) pourront résoudre les problèmes
 
 ### FORK
 
-Imaginons que tu veuilles mettre ton projet en ligne sur Github et que tu le mets en **public**. C'est bien joli mais tu te doute bien que si ton projet grossi et si il a des problèmes, des gens voudront t'aider à les réparer (c'est le but de l'open source).
+Imaginons que tu veuilles mettre ton projet en ligne sur Github et que tu le mets en **public**. C'est bien joli mais tu te doute bien que si ton projet grossi et s'il a des bugs, des gens voudront t'aider à les réparer (c'est le but de l'open source).
 
 Ca voudrait dire qu'ils feraient comme on vient de faire, on clone le repository sur notre machine et on bosse dessus, quand on a fini on fait un petit coup de ```push``` et ça retourne sur Github.
 
@@ -1279,7 +1277,7 @@ Si tu regardes en haut à droite, tu verras un bouton "**fork**". Et bien c'est 
 
 **Forker** c'est créer un nouveau repository similaire mais qui va appartenir à la personne qui **fork**.
 
-Si tu appuie sur le bouton (vas y je te laisse faire 😉) tu vas créer une copie du repo de Xlanex6 sur ton espace de repositories.
+Si tu appuies sur le bouton (vas y je te laisse faire 😉) tu vas créer une copie du repo de Xlanex6 sur ton espace de repositories.
 
 Et cette fois, celui-ci, tu vas pouvoir le **cloner**.
 
@@ -1324,13 +1322,13 @@ git add --all
 git commit -m "add hello in readme"
 ```
 
-Maintenant on va ```push``` notre branche sur Github, et par consequent la soumettre à l'auteur.
+Maintenant on va ```push``` notre branche sur Github, et par conséquent la soumettre à l'auteur.
 
 ```bash
 git push origin readme
 ```
 
-Si on retourne sur Github onn va voir un nouveau bouton vert avec écrit "**Compare & pull request**".
+Si on retourne sur Github on va voir un nouveau bouton vert avec écrit "**Compare & pull request**".
 
 C'est ici que l'auteur va pouvoir voir tes modifications, les accepter ou non, te dire pourquoi, échanger avec toi dessus.
 
@@ -1395,7 +1393,7 @@ Je conseille de ne **JAMAIS** faire de commit sur **master | main** et de la gar
 
 ## Logiciels
 
-Pour terminer je vais parler de quelques logiciels qui facilitent l'utilisation de git lorsque l'on est pas très à l'aise avec le terminal (même si après cet atricle ça m'étonnerais 🤔).
+Pour terminer je vais parler de quelques logiciels qui facilitent l'utilisation de git lorsque l'on est pas très à l'aise avec le terminal (même si après cet article ça m'étonnerais 🤔).
 
 ### Octotree
 
@@ -1407,19 +1405,19 @@ Sur la capture d'écran, c'est l'onglet qui est ouvert à gauche de l'écran.
 
 ### Github Desktop
 
-Tout d'abord, [Github Desktop](https://desktop.github.com/). Github desktop c'est un client Github qui va permettre de ne presque plus passer par les lignes de commandes.
+Tout d'abord, [Github Desktop](https://desktop.github.com/) est un client Github qui va permettre de ne presque plus passer par les lignes de commandes.
 
 ![Github Desktop](https://res.cloudinary.com/corentin7301/image/upload/v1614700487/git-workflow-article/github_desktop_wd7yi6.png)
 
-L'interface est très simple et en quelques minutes vous allez en comprendre le fonctionnement.
+L'interface est très simple et en quelques minutes tu vas en comprendre le fonctionnement.
 
 ### Github Desktop
 
-Dans la même lignée on retrouve [GitKraken](https://www.gitkraken.com/). C'est avec cet outils que j'ai pu faire les demonstrations de ```merge``` et de ```fork```.
+Dans la même lignée on retrouve [GitKraken](https://www.gitkraken.com/). C'est avec cet outil que j'ai pu faire les demonstrations de ```merge``` et de ```fork```.
 
 ![GitKraken](https://res.cloudinary.com/corentin7301/image/upload/v1614700707/git-workflow-article/gitkraken_pr0gv4.png)
 
-Il est également très simple et joli. Mais ce qui fait sa grande force c'est son système devisualisation de l'historique qui rend la compréhension des branches bien plus simple.
+Il est également très simple et joli. Mais ce qui fait sa grande force c'est son système de visualisation de l'historique qui rend la compréhension des branches bien plus simple.
 
 
 ### Source Tree
@@ -1432,13 +1430,13 @@ L'interface est un peu plus brute que sur les deux autres mais il reste efficace
 
 ### VS Code
 
-Dans le l'éditeur de code VS Code, on retrouve tout un panneau concernant Git.
+Dans l'éditeur de code VS Code, on retrouve tout un panneau concernant Git (à droite sur la capture d'écran).
 
 ![VS Code](https://res.cloudinary.com/corentin7301/image/upload/v1614701500/git-workflow-article/vs_code_yueca4.png)
 
 Le gros avantage est que son utilisation s'intègre dans le workflow de l'utilisateur puisqu'il reste sur le même logiciel.
 
-La gestion de Git via ce panneau est simple et surtout efficace. Le moins est qu'il n'y a aucune interface graphique ni représentation de l'historique sous la forme de branches.
+La gestion de Git via ce panneau est simple et surtout efficace. Le désavantage est qu'il n'y a aucune interface graphique ni représentation de l'historique sous la forme de branches.
 
 ### Mon avis
 
@@ -1448,19 +1446,19 @@ Personnellement j'utilise aujourd'hui la solution de VS Code, qui me permet de n
 
 ```bash
 
-git --version //connaitre sa version de Git
+git --version // connaitre sa version de Git
 
-git help //permet d'ouvrir la doc
+git help // permet d'ouvrir la doc
 
-//BASH COMMAND
+// BASH COMMAND
 
 cd ton/chemin // aller à ce chemin
 mkdir nom-du-nouveau-dossier // créer un nouveau dossier
 touch nom-du-nouveau-fichier // créer un nouveau fichier
 
-//GIT COMMAND
+// GIT COMMAND
 
-//GIT CONFIG
+// GIT CONFIG
 
 git config --global user.name "Nom Prénom" // configurer son username
 git config --global user.email "nom@exemple.com" // configurer son email
@@ -1488,7 +1486,7 @@ git add --all // ajouter tous les fichiers à la zone de staging
 
 git commit -m "nom-du-commit" // ajouter un commit
 git commit -a -m "nom-du-commit" // ajouter un commit en ajoutant tous les fichiers dans la zone de staging
-git commit --amend // Permet de rajouter des fichier en dans la zone de staging et l'inclure dans le commit précédent.
+git commit --amend // Permet de rajouter des fichier dans la zone de staging et l'inclure dans le commit précédent.
 
 
 // GIT LOG
@@ -1585,39 +1583,9 @@ git clone "lien-dépot-distant" --depth "nombre-de-commit-précédent-à-récup�
 git fetch nom-du-depot // Permet de récupérer des branches depuis un autre dépot
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // CLE SSH
 
 ssh-keygen -t rsa -C "ton-email" // Permet de générer une clé SSH
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ```
 
@@ -1628,7 +1596,7 @@ ssh-keygen -t rsa -C "ton-email" // Permet de générer une clé SSH
 
 ************
 
-### Ressources :
+## Ressources :
 
 [Git](https://fr.wikipedia.org/wiki/Git)
 <br>

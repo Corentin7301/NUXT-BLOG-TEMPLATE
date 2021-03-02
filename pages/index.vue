@@ -99,7 +99,7 @@
         border: solid 1px $orange;
         border-radius: 5px;
         background-color: #1E1E1E;
-        width: 100%;
+        width: 80%;
       }
 
       a {
