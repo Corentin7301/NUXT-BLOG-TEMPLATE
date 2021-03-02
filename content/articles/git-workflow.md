@@ -725,7 +725,7 @@ Tout simplement avec :
 git branch -d nom-de-la-branche
 ```
 
-Bien sur si on supprime une branche sans l'avoir mergé, on pert tou ce qu'il y a dessus ! Donc **❗ Attention ❗**
+Bien sur si on supprime une branche sans l'avoir mergé, on perd tout ce qu'il y a dessus ! Donc **❗ Attention ❗**
 
 Pour faire cela on doit faire :
 
@@ -733,7 +733,893 @@ Pour faire cela on doit faire :
 git branch -D nom-de-la-branche
 ```
 
+**Et voilà !** tu es devenu un pro des branches !
 
+## Manipuler l'historique
+
+Ce n'est pas vraiment conseillé,mais des fois on peut en avoir besoin pour corriger un commit foireux ou pour préparer une branche avant de la merger.
+
+### AMEND
+
+Amend est un argument de ```git commit```, il permet de rajouter des fichier en dans la zone de staging et l'inclure dans le commit précédent. Ca permet de corriger un oubli dans le dernier commit et de ne pas faire plusieurs commits pour la même chose.
+
+```bash
+git commit --amend
+```
+
+Si on reprend notre projet, on se souvient que dans notre "indexDeux.html" on avait :
+
+```html
+<h1>PAGE ACCUEIL</h1>
+<h2>Git workflow</h2>
+<h2>Je suis un h2</h2>
+<h3>bonjour</h3>
+```
+
+Si on vient enlever le ```<h3>``` et un ```<h2>``` et qu'on les commit :
+
+```bash
+git commit -a -m "clean indexDeux"
+```
+
+il nous reste seulement un ```<h1>``` et un ```<h2>```.
+
+Immaginons que nous avons **oublié** ce dernier ```<h2>``` lors de notre commit de "clean", on va alors le supprimer à son tour et pour réparer cet oubli on va l'inclure dans notre dernier commit :
+
+```bash
+git add indexDeux.html
+git commit --amend
+```
+On a donc le même éditeur Vim que lors du ```revert```, que l'on peut alors sauvegarder puis fermer.
+
+On voit donc bien que notre dernier commit est :
+
+![git commit --amend](https://res.cloudinary.com/corentin7301/image/upload/v1614676963/git-workflow-article/amend_gsbvfu.png)
+
+Et c'est lui qui contient alors toutes nos dernières modifications, même si on les a fait en deux fois.
+
+**❗ Il faut faire attention à ne jamais amend un commit déjà publié ! On l'utilise seulement pour de petits oublis en local ! ❗**
+
+### REBASE
+
+La commande ```rebase``` a le même objectif que ```merge```. La différence est que ```rebase``` permet de garder un historique linéaire et garde ainsi tous les commits.
+
+Si, avec un merge, on ramène tout sur la branche "master" (par exemple) sous forme d'un :
+
+![git merge gitkraken](https://res.cloudinary.com/corentin7301/image/upload/v1614679392/git-workflow-article/merge_gitkraken_piluh5.png)
+
+```Rebase``` va permettre d'ajouter tous les commits de la branche ("ici add-page-story") à la suite des commits de la branche "master".
+
+On va faire un petit exemple pour bien comprendre.
+
+Faisons une nouvelle branche "test-merge" et allons dessus :
+
+```bash
+git branch test-merge
+git checkout test-merge
+```
+
+Supprimons "story.html" puis faisons un commit :
+
+```bash
+git commit -a -m "del story.html"
+```
+
+On revient sur master :
+
+```bash
+git checkout master
+```
+
+puis on ajoute un fichier "bonjour.md" :
+
+```bash
+touch bonjour.md
+```
+On stage notre modification puis on la commit :
+
+```bash
+git add --all
+git commit -m "add bonjour.md"
+```
+On a donc ça :
+
+![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614680054/git-workflow-article/test_merge_1_mbhfwo.png)
+
+Maintenant on va merger "test-merge" sur master :
+
+```bash
+git merge test-merge
+```
+
+![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614680194/git-workflow-article/test_merge_2_i1luct.png)
+
+On voit qu'on a une nouvelle entrée dans notre historique de master qui est "Merge branch 'test-merge'. Ce n'est pas très beau et surtout on perd tout l'historique de la branche "test-merge".
+
+On va regarder ce que change ```rebase```.
+
+On va commencer par faire une nouvelle branche "test-rebase" :
+
+```bash
+git branch test-rebase
+git checkout test-rebase
+```
+
+Supprimons "contact.html" puis faisons un commit :
+
+```bash
+git commit -a -m "del contact.html"
+```
+
+et ajoutons "navbar.html" puis faisons un commit :
+
+```bash
+git add --all
+git commit -m "add navbar.html"
+```
+
+On revient sur master :
+
+```bash
+git checkout master
+```
+
+puis on ajoute un fichier "rebase.md" :
+
+```bash
+touch rebase.md
+```
+On stage notre modification puis on la commit :
+
+```bash
+git add --all
+git commit -m "add rebase.md"
+```
+
+On a donc ça :
+
+![gitkraken test rebase](https://res.cloudinary.com/corentin7301/image/upload/v1614681364/git-workflow-article/gitkraken_test_rebase_1_u6gubo.png)
+
+Maintenant on va rebase "test-rebase" sur master :
+
+**On doit se mettre sur la branche que l'on veut rebase !**
+
+```bash
+git checkout test-rebase
+git rebase master
+```
+Le rebase a bien eu lieu, maintenant on doit ramener master au niveau de "test-rebase" avec un merge classique :
+
+```bash
+git checkout master
+git merge test-rebase
+```
+
+
+![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614681795/git-workflow-article/gitkraken_test_rebase_2_gp6bdu.png)
+
+On voit bien que l'on a gardé tout notre historique. On a "add navbar.html", "del contact.html" et "add rebase.md" au lieu d'un (très moche) Merge branch 'test-rebase".
+
+Et on oublie pas de supprimer nos branches 😉 :
+
+```bash
+git branch -d test-merge
+git branch -d test-rebase
+```
+
+### REBASE interactif
+
+Un rebase interactif fonctionne exactement comme un rebase classique à ceci près que l'on peut manipuler les commits comme on le veut.
+
+Tout simplement si l'on fait un :
+
+```bash
+git rebase -i 'nom-de-la-branche'
+```
+
+Git va ouvrir un éditeur Vim comme ceci :
+
+![git rebase -i](https://res.cloudinary.com/corentin7301/image/upload/v1614682456/git-workflow-article/rebase-i_udmcww.png)
+
+Ou on va pouvoir modifier les commits avec ces commandes :
+
+```js
+pick //permet de d'inclure le commit. On peut en profiter pour changer l'ordre des différents commit
+reword //permet d'inclure le commit tout en ayant la possibiliter de changer le message
+edit //permet d'éditer le commit. En séparant en plusieurs commits par exemple
+squash //combine le commit avec le commit du dessus et permet de changer le message du commit
+fixup //comme squash mais utilisera le message du commit situé au dessus
+exec //permet de lancer des commandes shell sur le commit
+```
+
+## Le remisage
+
+Le remisage est le fait de mettre de côté temporairement nos modifications **sans les commit** si l'on veut par exemple changer de branche pour intervenir sur autre chose.
+
+### STASH
+
+Elle va être utilisée pour mettre de côté toutes les modifications qui ont étés apportées au projet depuis le dernier commit.
+
+```bash
+git stash
+```
+
+Si on fait un coup de ```git status``` on verra qu'il n'y a plus rien dans les fichiers modifiés.
+
+### STASH APPLY
+
+Pour **réappliquer** nos modifications stahsées on utilise :
+
+```bash
+git stash apply
+```
+### STASH LIST
+
+On peut voir tous les stash sauvegardés avec :
+
+```bash
+git stash list
+```
+
+### STASH DROP
+Même lorsqu'il est "```apply```", le stash ne disparaîtra pas de la liste, pour supprimer le deriner stash on utilise :
+
+```bash
+git stash drop
+```
+
+### STASH POP
+
+Cela permet de faire les commandes ```git stash apply``` et ```git stash drop``` en une seule ligne :
+
+```bash
+git stash pop
+```
+
+### STASH multiple
+
+Si l'on a plusieurs stash en mémoire on va pouvoir les appeler par ```stash@{id}```, par exemple :
+
+```bash
+git stash apply stash@{1}
+```
+
+On peut également avoir plus d'informations sur un stash avec :
+
+```bash
+git stash show stash@{1} -p
+```
+
+et les nommer avec :
+
+```bash
+git stash save "fix bug form"
+```
+
+## Mais tu n'avais pas parler de travailler à plusieurs ?
+
+...Parce que pour l'instant on ne travaille qu'en local... 🤔
+
+Et bien **si !** 
+
+Et c'est ce qu'on va voir maintenant.
+
+On va introduire des nouvelles notions, la première c'est le notion de **dépot**.
+
+Depuis le début on travaille dans un dossier ("premier-projet-git"), c'est notre **dépot local**.
+
+Pour pouvoir travailler à distance et collaborer on va utiliser un **dépot distant**.
+
+Pour faire un dépot distant on peut utiliser un dossier spécifique, un chemin ssh:// ou un service comme Github, Gitlab ou Bitbucket.
+
+### Dépot distant
+
+Pour prendre tes marques je te propose de commencer sur un dossier sur ta machine qui nous servira de dépot distant.
+
+Pour cela, lorsque on initialise Git dans un dossier, on peut rajouter un argument ```--bare``` :
+
+```bash
+git init --bare
+```
+
+Donc crééons ce dossier (en dehors de notre dossier "premier-projet-git") :
+
+```bash
+mkdir remote
+cd ./remote/
+```
+
+Puis on l'initialise :
+
+```bash
+git init --bare
+```
+
+C'est un dossier Git qui n'aura pas de dossier de travail, il servira **seulement** de dépot distant.
+
+Pour ajouter une connexion de notre projet (dépot local) à notre dépot distant on dit qu'on fait une "**remote**".
+
+### REMOTE
+
+Pour en ajouter une on fait (sur le terminal de notre dépot local) :
+
+```bash
+git remote add origin "dépot-distant"
+```
+
+Ici :
+
+```bash
+git remote add origin "C:\Users\coren\Desktop\remote"
+```
+
+"**origin**" est le nom que l'on donne à notre dépot, par convention on le nomme "origin" pour dépot originel.
+
+Pour voir les connexions on fait :
+
+```bash
+git remote -v
+```
+
+On peut le renommer avec :
+
+```bash
+git remote rename "nouveau-nom"
+```
+
+Et le supprimer avec :
+
+```bash
+git remote remove "nom-du-dépot"
+```
+
+
+
+Pour voir les branches distantes on fait :
+
+```bash
+git branch -r
+```
+
+(ici on aura rien puisque on encore rien envoyé sur notre dépot distant)
+
+### PUSH
+
+Pour envoyer sur notre dépot distant on fait :
+
+```bash
+git push "nom-du-dépot-distant" "nom-de-la-branche"
+//ou
+git push --all //pour pousser toutes les branches
+```
+
+Ici :
+
+```bash
+git push origin master
+```
+Avec :
+
+```bash
+git branch -r
+```
+
+On a bien notre branche master sur origin :
+
+![git branch -r](https://res.cloudinary.com/corentin7301/image/upload/v1614687984/git-workflow-article/git_branch_-r_njkbpk.png)
+
+On peut réessayer avec une nouvelle branche :
+
+```bash
+git branch test //on créé une nouvelle branche
+git push origin test //on l'envoie sur origin
+git branch -r //on a notre nouvelle branche
+```
+
+Pour la supprimer on la supprime d'abord en local :
+
+```bash
+git branch -d test
+```
+
+Puis pour le dépot distant :
+
+```bash
+git push origin --delete test
+```
+
+```push``` permet donc d'**envoyer** les modifications.
+
+### PULL
+
+Pour récupérer les nouvelles informations qui ont eu lieu sur le dossier distant (par exemple parce que Michel à fait une nouvelle modif.) on utilise :
+
+```bash
+git pull "nom-du-dépot-distant" "nom-de-la-branche"
+```
+Ici :
+
+```bash
+git pull origin master
+```
+
+```pull``` permet de **récupérer** les modifications.
+
+(Option) Pour **obliger** Git à faire des ```rebase``` plutôt que des ```merge``` lors des pull, vous pouvez modifier la configuration en faisant :
+
+```bash
+ git config --global branch.autosetuprebase always
+ ```
+
+
+### CLONE
+
+Pour créer un nouveau projet à partir d'un dépot distant il faudra utiliser :
+
+```bash
+git clone "lien-dépot-distant"
+```
+
+On peut donner une profondeur à un clone pour ne pas récupérer tout un énorme historique avec la commande :
+
+```bash
+git clone "lien-dépot-distant" --depth "nombre-de-commit-précédent-à-récupérer"
+```
+
+## Services d'hébergement, Github & cie
+
+Github, Gitlab, Bitbucket, ...
+
+Tous ces services sont des services d'hébèrgement.
+
+Ils donnent accès à des dépots distants.
+
+C'est gràce à eux que tu pourras bosser avec Michel, Raph, Cédric ou sur le projet open-source.
+
+Ici on va parler plus particulièrement de **Github**.
+
+Rapidement, Github est développé par Chris Wanstrath, PJ Hyett et Tom Preston-Werner en 2008, c'est toujours le service d'hébèregement de ce type préféré aux yeux de beaucoup de développeurs.
+
+Je te propose de te créer un compte sur le site de Github : [www.github.com](https://github.com/).
+
+Si tu ne comprends pas tout c'est normal, ce qui va nous intéresser ici (tu pourras découvrir le reste tout seul), cest les "**repositories**", c'est tout bonnement l'équivalent de notre dossier "remote" de tout à l'heure, ça va être tes **dépots distants**.
+
+### Clé SSH
+
+Avant de commencer à l'utiliser on va tout d'abord générer une clé ssh (c'est la clé que l'on va donner à Github.) :
+
+```bash
+ssh-keygen -t rsa -C "ton-email" //entre ""
+```
+
+Il va te demander le chemin sur lequel tu veux le mettre, je te conseil : "```C:\Users/nom-d'utilisateur```".
+
+Si tu vas dans ton explorateur de fichiers et dans "```C:\Users/nom-d'utilisateur/.ssh```" id devrait y avoir deux fichiers : "**id_rsa**" et "**id_rsa.pub**".
+
+La clé "**id_rsa**" est secrète et il ne faut la donner à personne !
+
+La clé "**id_rsa.pub**" est le clé publique, c'est elle que l'on va utiliser.
+
+Si on l'ouvre avec un éditeur de texte on a une longue clé cryptée.
+
+Et bien on va la copier puis la coller dans l'onglet "Settings"/"SSH and GPG keys"/"New SSH key" et l'ajouter.
+
+### Nouveau repository
+
+On va commencer par créer un nouveau dépot local pour repartir de zéro :
+
+```bash
+mkdir projet-git-github
+cd projet-git-github
+```
+
+On va initialiser Git, créer un nouveau fichier readme.md, le remplir et on va le commit :
+
+```bash
+git init
+touch readme.md
+// on met le nom du projet dedans "# projet-git-github"
+git add --all
+git commit -m "initial commit"
+```
+
+Sur Github on va commencer par créer un nouveau dépot, un nouveau "**repository**".
+
+Ca se passe en haut à droite, lorsque tu cliques sur l'icone utilisateur, tu peux choisir l'onglet **"Your repositories"**. Et à droite tu as **New**.
+
+Tu peux donner le nom que tu veux à ton repo (nom abrégé chez les devs 😉) mais ici on va mettre "```projet-git-github```", on va le mettre en privé et le créer.
+
+**Bravo ! Tu as créé ton premier repo !**
+
+Sur la page de ton repo tu vas avoir le choix entre plusieurs choses. Nous on va utiliser la méthode HTTPS et donc copier le lien HTTPS.
+
+C'est ici que l'on va ajouter une "remote", avec ce lien là :
+
+```bash
+git remote add origin https://github.com/Corentin7301/projet-git-github.git
+```
+
+Et pousser notre commit sur notre dépot distant :
+
+```bash
+git push origin main //ma branche s'appelle "main"
+```
+
+Maintenant si tu retourne sur Github et que tu rafraichis la page, tu peux voir ton magnifique **readme** qui apparaît !
+
+![github](https://res.cloudinary.com/corentin7301/image/upload/v1614694700/git-workflow-article/github_b17lvh.png)
+
+Presque magique non ? 🧙🏼‍♂️😉
+
+A partir d'ici tout le monde pourra mettre une **star** (aimer), devenir **watcher** (s'abonner) ou **forker** (on le verra juste après).
+
+(Enfin, pas sur notre projet puisqu'il est en privé)
+
+On peut également voir le code, les commits et les branches directement en ligne.
+
+Sur Github on a également un système d'**issues**, en gros, ça sert à signaler un bug sur l'application.
+
+C'est grâce à cela que le(s) développeur(s) pourront résoudre les problèmes.
+
+### FORK
+
+Imaginons que tu veuilles mettre ton projet en ligne sur Github et que tu le mets en **public**. C'est bien joli mais tu te doute bien que si ton projet grossi et si il a des problèmes, des gens voudront t'aider à les réparer (c'est le but de l'open source).
+
+Ca voudrait dire qu'ils feraient comme on vient de faire, on clone le repository sur notre machine et on bosse dessus, quand on a fini on fait un petit coup de ```push``` et ça retourne sur Github.
+
+Oui mais... EH ! Paul ! Tu viens de péter ma production en commitant sur master là ! Il est pas bon ton commit en plus !
+
+Eh oui... on est d'accord, tout le monde ne peut pas faire ce qu'il veut sur **ton** projet.
+
+Alors pour régler ça, Paul ne va plus cloner ton repo, mais le **forker**.
+
+Si tu regardes ce repository par exemple : [github o79-community](https://github.com/Corentin7301/o79-community).
+
+Si tu regardes en haut à droite, tu verras un bouton "**fork**". Et bien c'est ça !
+
+**Forker** c'est créer un nouveau repository similaire mais qui va appartenir à la personne qui **fork**.
+
+Si tu appuie sur le bouton (vas y je te laisse faire 😉) tu vas créer une copie du repo de Xlanex6 sur ton espace de repositories.
+
+Et cette fois, celui-ci, tu vas pouvoir le **cloner**.
+
+Si on fait un ```git log --oneline``` dans ce dossier, on peut voir que l'on récupère également tout l'historique :
+
+![o79-community fork](https://res.cloudinary.com/corentin7301/image/upload/v1614696426/git-workflow-article/o79_fork_sctt5e.png)
+
+On peut aussi essayer de lister toutes les branches :
+
+```bash
+git branch -a
+```
+
+![o79-community branch -a](https://res.cloudinary.com/corentin7301/image/upload/v1614696777/git-workflow-article/git_branch_-a_zz09je.png)
+
+
+Lorsqu'on commence à travailler sur un **fork** il faut **tout de suite créer une nouvelle branche** !!
+
+Et ne **jamais travailler sur master (ou main)**
+
+### PULL REQUEST
+
+On va maintenant laisser tranquille le repo de Xlanex6.
+
+Je t'invite à **forker** ce repo : [https://github.com/Corentin7301/tuto-projet-git-github](https://github.com/Corentin7301/tuto-projet-git-github)
+
+Donc si on réutilise ce qu'on a fait avant, on appuie sur le bouton "```fork```" puis on le **clone** sur notre machine.
+
+Une fois que c'est fait on va faire une nouvelle branche :
+
+```bash
+git branch readme
+git checkout readme
+```
+
+Et on va ajouter "Bonjour à tous sur mon projet" dans le readme.
+
+On va pouvoir faire un commit :
+
+```bash
+git add --all
+git commit -m "add hello in readme"
+```
+
+Maintenant on va ```push``` notre branche sur Github, et par consequent la soumettre à l'auteur.
+
+```bash
+git push origin readme
+```
+
+Si on retourne sur Github onn va voir un nouveau bouton vert avec écrit "**Compare & pull request**".
+
+C'est ici que l'auteur va pouvoir voir tes modifications, les accepter ou non, te dire pourquoi, échanger avec toi dessus.
+
+Et toi, à chaque nouvelle modification, il te suffis de commit puis de push pour que la **pull request** se mette à jour.
+
+### Remettre à jour le dépot forké
+
+Maintenant imaginons que tu délaisse le projet pendant un moment, le monde ne s'arrête pas de tourner (non non 😉), le projet avance. Mais toi tu n'est plus à jour !
+
+Alors pour le remettre à jour on ne va pas supprimer notre dépot, le re-forker puis le re-cloner (t'imagines ?!). Non, on va faire une nouvelle remote avec cette fois l'url du dépot original (pas le tiens, celui que tu as fork) :
+
+```bash
+git remote add upstream https://github.com/Corentin7301/projet-git-github.git
+```
+
+```upstream``` est le nom donné par convention pour cette remote.
+
+Si on fait :
+
+```bash
+git remote -v
+```
+
+Il doit y avoir les deux remotes.
+
+Si on fait :
+
+```bash
+git branch -a
+```
+
+Il n'y a pas accès aux branches de "upstream".
+
+Pour cela on va récupérer la branche master qui se trouve sur "upstream" :
+
+```bash
+git fetch ustream
+```
+
+Si on refait :
+
+```bash
+git branch -a
+```
+
+On a maintenant les branches de upstream.
+
+Maintenant on peut se mettre sur notre branche master et merger la branche ```upstream/master``` :
+
+```bash
+git merge upstream/master
+```
+
+Et c'est tout bon, maintenant, à chaque fois qu'il faudra remettre à jour, il suffira de merger.
+
+Je conseille, à chaque ```fork```, de faire cette manipulation pour ne plus avoir à y penser ensuite.
+
+
+## IMPORTANT
+
+Je conseille de ne **JAMAIS** faire de commit sur **master | main** et de la garder pour les synchronisations. On utilise plutôt d'autres branches pour travailler.
+
+## Logiciels
+
+Pour terminer je vais parler de quelques logiciels qui facilitent l'utilisation de git lorsque l'on est pas très à l'aise avec le terminal (même si après cet atricle ça m'étonnerais 🤔).
+
+### Octotree
+
+Cette extension est une aide précieuse dans Github, elle permet de naviguer entre tous les dossiers d'un projet rapidement et efficacement.
+
+Sur la capture d'écran, c'est l'onglet qui est ouvert à gauche de l'écran.
+
+![Octotree](https://res.cloudinary.com/corentin7301/image/upload/v1614701708/git-workflow-article/octotree_sxbwod.png)
+
+### Github Desktop
+
+Tout d'abord, [Github Desktop](https://desktop.github.com/). Github desktop c'est un client Github qui va permettre de ne presque plus passer par les lignes de commandes.
+
+![Github Desktop](https://res.cloudinary.com/corentin7301/image/upload/v1614700487/git-workflow-article/github_desktop_wd7yi6.png)
+
+L'interface est très simple et en quelques minutes vous allez en comprendre le fonctionnement.
+
+### Github Desktop
+
+Dans la même lignée on retrouve [GitKraken](https://www.gitkraken.com/). C'est avec cet outils que j'ai pu faire les demonstrations de ```merge``` et de ```fork```.
+
+![GitKraken](https://res.cloudinary.com/corentin7301/image/upload/v1614700707/git-workflow-article/gitkraken_pr0gv4.png)
+
+Il est également très simple et joli. Mais ce qui fait sa grande force c'est son système devisualisation de l'historique qui rend la compréhension des branches bien plus simple.
+
+
+### Source Tree
+
+Il existe aussi [Source Tree](https://www.sourcetreeapp.com/) que j'ai utilisé pendant un moment mais que j'ai laissé tomber à cause de sa lenteur de son habitude de crasher.
+
+![Source Tree](https://res.cloudinary.com/corentin7301/image/upload/v1614700996/git-workflow-article/source_tree_bxx10k.png)
+
+L'interface est un peu plus brute que sur les deux autres mais il reste efficace. Le système de branches est sympa même si celui de GitKraken est plus élaboré.
+
+### VS Code
+
+Dans le l'éditeur de code VS Code, on retrouve tout un panneau concernant Git.
+
+![VS Code](https://res.cloudinary.com/corentin7301/image/upload/v1614701500/git-workflow-article/vs_code_yueca4.png)
+
+Le gros avantage est que son utilisation s'intègre dans le workflow de l'utilisateur puisqu'il reste sur le même logiciel.
+
+La gestion de Git via ce panneau est simple et surtout efficace. Le moins est qu'il n'y a aucune interface graphique ni représentation de l'historique sous la forme de branches.
+
+### Mon avis
+
+Personnellement j'utilise aujourd'hui la solution de VS Code, qui me permet de ne pas avoir à changer de logiciel et s'inclut dans mon workflow, mais je conseille l'utilisation de GitKraken qui est assez complet et qui facilite la gestion des branches.
+
+## Git Cheat Sheet | Aide-mémoire Git
+
+```bash
+
+git --version //connaitre sa version de Git
+
+git help //permet d'ouvrir la doc
+
+//BASH COMMAND
+
+cd ton/chemin // aller à ce chemin
+mkdir nom-du-nouveau-dossier // créer un nouveau dossier
+touch nom-du-nouveau-fichier // créer un nouveau fichier
+
+//GIT COMMAND
+
+//GIT CONFIG
+
+git config --global user.name "Nom Prénom" // configurer son username
+git config --global user.email "nom@exemple.com" // configurer son email
+git config --global branch.autosetuprebase always // Obliger Git à faire de rebase plutôt que des merges lors des pull
+
+
+// GIT INIT
+
+git init // initialiser un projet Git
+git init --bare // initialiser un projet distant
+
+
+// GIT STATUS
+
+git status // regarder l'état de notre projet
+
+
+// GIT ADD
+
+git add fichier.extension // ajouter un fichier à la zone de staging
+git add --all // ajouter tous les fichiers à la zone de staging
+
+
+// GIT COMMIT
+
+git commit -m "nom-du-commit" // ajouter un commit
+git commit -a -m "nom-du-commit" // ajouter un commit en ajoutant tous les fichiers dans la zone de staging
+git commit --amend // Permet de rajouter des fichier en dans la zone de staging et l'inclure dans le commit précédent.
+
+
+// GIT LOG
+
+git log // permet de voir les commits
+git log --oneline // permet de voir les commits sur une ligne
+git log --oneline -p nom-du-fichier // permet de voir les modifications depuis le dernier commit sur un fichier
+
+// GIT DIFF
+
+git diff // permet de voir la différence avec le dernier commit
+
+
+// GIT CHECKOUT
+
+git checkout id-commit | id-branch // changer de branche | revenir sur un commit | revenir sur un fichier par rapport à un commit
+
+
+// GIT REVERT
+
+git revert f385eae // permet de défaire un commit
+
+
+// GIT RESET
+
+git reset id-commit // Supprime un fichier de la zone de staging mais pas les modifications qui sont faites.
+git reset // Supprime tous les fichiers de la zone de staging mais pas les modifications qui sont faites.
+git reset --hard // ❗ Renvoit le dossier de travail au niveau du dernier commit. Toutes les modifications non commit seront perdues.
+git reset id-commit // Permet de revenir en arrière jusqu'au commit en question, réinitialise la zone de staging tout en laissant votre dossier de travail en l'état.
+git reset id-commit --hard // ❗ Permet de revenir au commit en question et réinitialise la zone de staging et le dossier de travail pour correspondre.
+
+
+// GIT BRANCH
+
+git branch nom-de-la-nouvelle-branche // Permet de créer une nouvelle branche
+git branch // Permet de voir toutes les branches
+git branch -d nom-de-la-branche // Supprime la branche (sauf si elle n'a pas été mergée)
+git branch -D nom-de-la-branche // ❗ Supprime la beanche en force
+git branch -r // Permet de voir les branches distantes
+git branch -a // Permet de lister toutes les branches
+
+
+// GIT MERGE
+
+git merge nom-de-la-branche-à-fusionner-sur-la-branche-courante // Permet de fusionner les branches
+
+
+// GIT REBASE
+
+git rebase master // Permet de fusionner la branche en gardant un historique linéaire et en récupérant tous les commits de cette branche
+git rebase -i 'nom-de-la-branche' // Permet de faire un rebase interactif
+
+
+// GIT STASH
+
+git stash // Permet de remiser les modifications
+git stash apply // Permet de réappliquer les modifications
+git stash list // Permet de lister les stash
+git stash drop // Permet de supprimer un stash
+git stash pop // Permet de faire un apply puis un drop
+git stash ----- stash@{1} // Permet d'utiliser un seul stash
+git stash show stash@{1} -p // Permet d'avoir des informations sur un stash
+git stash save "fix bug form" // permet de nommer un stash
+
+
+// GIT REMOTE
+
+git remote add origin "dépot-distant" // Ajouter une remote/connexion
+git remote -v // Voir les remotes/connexions
+git remote rename "nouveau-nom" // Renommer une remote/connexion
+git remote remove "nom-du-dépot" // Supprimer une remote/connexion
+
+
+// GIT PUSH
+
+git push "nom-du-dépot-distant" "nom-de-la-branche" // Envoyer une branche sur le dépot distant
+git push --all //Permet d'envoyer toutes les branches
+git push origin --delete nom-de-la-branche // Supprimer une branche distante
+
+
+// GIT PULL
+
+git pull "nom-du-dépot-distant" "nom-de-la-branche" // Récupérer les informations depuis le dépot distant
+
+
+// GIT CLONE
+
+git clone "lien-dépot-distant" // Permet de récupérer un dépot distant sur une machine
+git clone "lien-dépot-distant" --depth "nombre-de-commit-précédent-à-récupérer" // Permet de récupérer seulement que quelques commit et non tou l'historique
+
+
+// GIT FETCH
+
+git fetch nom-du-depot // Permet de récupérer des branches depuis un autre dépot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CLE SSH
+
+ssh-keygen -t rsa -C "ton-email" // Permet de générer une clé SSH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
 
 
 <br>
@@ -742,7 +1628,7 @@ git branch -D nom-de-la-branche
 
 ************
 
-Ressources :
+### Ressources :
 
 [Git](https://fr.wikipedia.org/wiki/Git)
 <br>
@@ -751,9 +1637,12 @@ Ressources :
 [GitHub](https://fr.wikipedia.org/wiki/GitHub)
 <br>
 [Git config](https://git-scm.com/book/fr/v2/Personnalisation-de-Git-Configuration-de-Git)
+<br>
+[Grafikart](https://grafikart.fr/)
+<br>
+[Openclassroom](https://openclassrooms.com/fr/courses/5641721-utilisez-git-et-github-pour-vos-projets-de-developpement)
+<br>
+[Git merge / Git rebase](https://www.atlassian.com/fr/git/tutorials/merging-vs-rebasing)
 
 TODO : 
 * faire une cheat sheet
-* parler des soft != github
-* parler de github desktop
-* outils formation git
