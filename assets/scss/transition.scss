@@ -1,0 +1,15 @@
+.page-transition-enter-active,
+.page-transition-leave-active {
+  transition: opacity 0.5s;
+}
+.page-transition-enter,
+.page-transition-leave-to {
+  opacity: 0;
+}
+
+.layout-transition-enter-active, .layout-transition-leave-active {
+    transition: opacity .5s
+  }
+  .layout-transition-enter, .layout-transition-leave-active {
+    opacity: 0
+  }

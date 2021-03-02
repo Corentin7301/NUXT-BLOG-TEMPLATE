@@ -22,7 +22,7 @@ export default {
       }
     ]
   },
-  css: ['~/assets/scss/main.scss','~/assets/scss/colors.scss','~/assets/scss/utility.scss'
+  css: ['~/assets/scss/main.scss','~/assets/scss/colors.scss','~/assets/scss/utility.scss', '~/assets/scss/scrollbar.scss', '~/assets/scss/transition.scss'
   ],
   plugins: [
   ],
