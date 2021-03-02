@@ -13,6 +13,16 @@ html {
   list-style-type: none;
   
 }
+::selection {
+  color: gray;
+  background-color: rgb(54, 54, 54);
+}
+
+::-moz-selection {
+  color: gray;
+  background-color: rgb(54, 54, 54);
+}
+
 
 a {
   text-decoration: inherit;
