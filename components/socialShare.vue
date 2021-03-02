@@ -85,13 +85,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: start;
-        margin: 20px 0 0 50px;
+        margin-top: 20px;
         text-align: left;
 
 
         .link {
           display: flex;
-          justify-content: center;
           align-items: center;
           flex-wrap: wrap;
 
