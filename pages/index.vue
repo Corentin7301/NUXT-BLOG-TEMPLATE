@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="containerIndex">
     <nuxt-link class="articles" v-for="infoPage in infoPage" :key="infoPage.slug" :to="`/articles/${infoPage.slug}`">
-    <img :src="infoPage.urlImage" :alt="infoPage.title">
-    <h2>{{ infoPage.title }}</h2>
-    <h3>{{ infoPage.description }}</h3>
-    <code>Posté le : {{$dayjs( infoPage.createdAt ).format("DD/MM/YYYY")}}</code>
+      <img :src="infoPage.urlImage" :alt="infoPage.title">
+      <h2>{{ infoPage.title }}</h2>
+      <h3>{{ infoPage.description }}</h3>
+      <code>Posté le : {{$dayjs( infoPage.createdAt ).format("DD/MM/YYYY")}}</code>
     </nuxt-link>
     <div class="article-content">
       <nuxt-content :document="infoPage" />
@@ -15,8 +15,11 @@
 
 <script>
   export default {
-    async asyncData({ $content }) {
-      const infoPage = await $content('articles').only(['title', 'slug', 'description', 'createdAt', 'urlImage']).fetch()
+    async asyncData({
+      $content
+    }) {
+      const infoPage = await $content('articles').only(['title', 'slug', 'description', 'createdAt', 'urlImage'])
+        .fetch()
       return {
         infoPage
       }
@@ -33,7 +36,7 @@
 </script>
 
 <style lang="scss">
-  .container {
+  .containerIndex {
     margin: 0 auto;
     padding: 10px;
     min-height: 100vh;
@@ -76,16 +79,14 @@
   }
 
   @media screen and (min-width: 1216px) {
-    .container {
-    padding: 0;
-    align-items: start;
+    .containerIndex {
+      padding: 0;
+      align-items: start;
 
-
-   .articles {
-     margin: 50px;
-     width: 500px;
-
-   }
+      .articles {
+        margin: 50px;
+        width: 500px;
+      }
     }
   }
 
