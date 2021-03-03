@@ -1,30 +1,21 @@
 <template>
   <div class="container">
-    <nuxt-link class="articles" v-for="infoPage in infoPage" :key="infoPage.slug" :to="`/articles/${infoPage.slug}`">
-    <img :src="infoPage.urlImage" :alt="infoPage.title">
-    <h2>{{ infoPage.title }}</h2>
-    <h3>{{ infoPage.description }}</h3>
-    <code>{{ infoPage.createdAt }}</code>
-    </nuxt-link>
     <div class="article-content">
-      <nuxt-content :document="infoPage" />
+      <nuxt-content :document="page" />
     </div>
-    <Menu :toc="infoPage.toc" />
+    <Menu :toc="page.toc" />
   </div>
 </template>
 
 <script>
   export default {
-    async asyncData({ $content }) {
-      const infoPage = await $content('articles').only(['title', 'slug', 'description', 'createdAt', 'urlImage']).fetch()
+    async asyncData({
+      $content, params
+    }) {
+      const slug = params.slug
+      const page = await $content('articles', slug).fetch()
       return {
-        infoPage
-      }
-    },
-
-    methods: {
-      moveTo(slug) {
-        this.$router.push(`/${slug}`)
+        page
       }
     },
 
@@ -42,39 +33,12 @@
     color: $white;
     text-decoration: none;
     position: relative;
-    display: flex;
-    flex-direction: column;
 
     .article-content {
       width: 100%;
     }
 
-    .articles {
-      margin: 50px;
-      cursor: pointer;
-      width: 500px;
 
-      img {
-        width: 500px;
-        border-radius: 5px;
-      }
-
-      h2 {
-        font-size: 35px;
-        color: $orange;
-        margin: 10px 0 5px 0;
-      }
-
-      h3 {
-        font-size: 20px;
-        margin: 5px 0;
-      }
-
-      code {
-        font-size: 15px;
-        margin: 5px 0;
-      }
-    }
 
     .article-content .nuxt-content {
       h1 {

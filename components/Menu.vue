@@ -23,8 +23,6 @@
 <style lang="scss">
   .menu {
     display: none;
-
-
   }
 
   @media screen and (min-width: 1216px) {
