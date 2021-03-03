@@ -82,7 +82,7 @@
           },
           {
             property: "article:tag",
-            content: this.page.tags ? this.article.tags.toString() : `${this.page.title}`,
+            content: this.page.slug,
           },
           {
             name: "twitter:label1",
@@ -94,11 +94,11 @@
           },
           {
             name: "twitter:label2",
-            content: "Titre :"
+            content: "Titre : "
           },
           {
             name: "twitter:data2",
-            content: this.article.tags ? this.article.tags.toString() : `${this.page.title}`,
+            content: this.page.slug,
           }
         ],
         link: [{
