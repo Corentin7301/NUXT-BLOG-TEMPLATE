@@ -1,7 +1,7 @@
 
 export default {
-  ssr: false,
-  target: 'static',
+  // ssr: false,
+  // target: 'static',
   head: {
     title: 'Blog Corentin PERROUX',
     meta: [
@@ -41,5 +41,8 @@ export default {
     scss: ['~/assets/scss/*.scss']
   },
   build: {
+  },
+  generate: {
+    
   }
 }
