@@ -17,6 +17,15 @@
   export default {
     layout: "home",
 
+    head: {
+      title: "Blog Corentin PERROUX",
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: "Blog Corentin PERROUX"
+      }],
+    },
+
     
     async asyncData({
       $content

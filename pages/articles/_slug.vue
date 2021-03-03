@@ -9,8 +9,109 @@
 
 <script>
   export default {
+
+    head() {
+      return {
+        title: `${this.page.title}`,
+        meta: [{
+            hid: 'description',
+            name: 'description',
+            content: `${this.page.description}`
+          },
+          {
+            hid: "og:url",
+            property: "og:url",
+            content: `https://blog.corentinperroux.fr/articles/${this.page.slug}`,
+          },
+          {
+            hid: "og:title",
+            property: "og:title",
+            content: `${this.page.title}`,
+          },
+          {
+            hid: "og:description",
+            property: "og:description",
+            content: `${this.page.description}`,
+          },
+          {
+            hid: "og:image",
+            property: "og:image",
+            content: `${this.page.urlImage}`,
+          },
+          {
+            property: "article:published_time",
+            content: this.page.createdAt,
+          },
+          {
+            property: "article:modified_time",
+            content: this.page.updatedAt,
+          },
+          {
+            property: "article:tag",
+            content: this.page.tags ? this.article.tags.toString() : `${this.page.title}`,
+          },
+          // { name: "twitter:card", content: "summary_large_image" }, 
+          {
+            hid: "twitter:url",
+            name: "twitter:url",
+            content: `https://blog.corentinperroux.fr/articles/${this.page.slug}`,
+          },
+          {
+            hid: "twitter:title",
+            name: "twitter:title",
+            content: `${this.page.title}`,
+          },
+          {
+            hid: "twitter:description",
+            name: "twitter:description",
+            content: `${this.page.description}`,
+          },
+          {
+            hid: "twitter:image",
+            name: "twitter:image",
+            content: `${this.page.urlImage}`,
+          },
+
+          {
+            property: "article:published_time",
+            content: this.page.createdAt,
+          },
+          {
+            property: "article:modified_time",
+            content: this.page.updatedAt,
+          },
+          {
+            property: "article:tag",
+            content: this.page.tags ? this.article.tags.toString() : `${this.page.title}`,
+          },
+          {
+            name: "twitter:label1",
+            content: "Ecrit par "
+          },
+          {
+            name: "twitter:data1",
+            content: "Corentin PERROUX"
+          },
+          {
+            name: "twitter:label2",
+            content: "Titre :"
+          },
+          {
+            name: "twitter:data2",
+            content: this.article.tags ? this.article.tags.toString() : `${this.page.title}`,
+          }
+        ],
+        link: [{
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://blog.corentinperroux.fr/articles/${this.page.slug}`,
+        }, ],
+      }
+    },
+
     async asyncData({
-      $content, params
+      $content,
+      params
     }) {
       const slug = params.slug
       const page = await $content('articles', slug).fetch()

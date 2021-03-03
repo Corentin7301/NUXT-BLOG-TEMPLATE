@@ -1,6 +1,6 @@
 ---
 title: Git workflow
-description: Apprenez à utiliser Git
+description: Apprends à utiliser Git
 urlImage: https://cod-box.net/wp-content/uploads/2019/10/Tutoriel-GIT-Poweshell-install.png
 ---
 
