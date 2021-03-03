@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="layout">
     <Header />
     <Nuxt />
     <Footer />
@@ -7,7 +7,7 @@
 </template>
 
 <style lang="scss" scoped>
-  div {
+  #layout {
     background-color: $black;
     font-family: 'Montserrat', sans-serif;
     color: $white;
