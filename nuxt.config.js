@@ -39,7 +39,20 @@ export default {
   plugins: [],
   // auto import des comp.
   components: true,
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/google-analytics'
+  ],
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    },
+  },
+
+
   modules: [
     '@nuxtjs/style-resources',
     '@nuxt/content',
