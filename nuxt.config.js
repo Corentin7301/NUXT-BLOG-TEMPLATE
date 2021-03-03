@@ -80,6 +80,13 @@ export default {
   },
   build: {},
   generate: {
-
+  },
+  layoutTransition: {
+    name: 'layout-transition',
+    mode: 'out-in'
+  },
+  pageTransition: {
+    name: 'page-transition',
+    mode: 'out-in',
   }
 }
