@@ -4,7 +4,7 @@
     <img :src="infoPage.urlImage" :alt="infoPage.title">
     <h2>{{ infoPage.title }}</h2>
     <h3>{{ infoPage.description }}</h3>
-    <code>{{ infoPage.createdAt }}</code>
+    <code>Posté le : {{$dayjs( infoPage.createdAt ).format("DD/MM/YYYY")}}</code>
     </nuxt-link>
     <div class="article-content">
       <nuxt-content :document="infoPage" />
@@ -44,18 +44,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    .article-content {
-      width: 100%;
-    }
 
     .articles {
       margin: 50px;
       cursor: pointer;
-      width: 500px;
+      width: 300px;
 
       img {
-        width: 500px;
+        width: 100%;
         border-radius: 5px;
       }
 
@@ -75,85 +73,19 @@
         margin: 5px 0;
       }
     }
-
-    .article-content .nuxt-content {
-      h1 {
-        color: $orange;
-        margin-bottom: 32px;
-        font-size: 45px;
-      }
-
-      h2 {
-        color: $orange;
-        margin: 40px 0 25px 0;
-        font-size: 30px;
-      }
-
-      h3 {
-        color: $orange;
-        margin: 30px 0 15px 0;
-        font-size: 20px;
-
-      }
-
-      h4 {
-        color: $orange;
-        margin: 30px 0 15px 0;
-
-      }
-
-      p {
-        margin: 15px 0;
-        line-height: 28px;
-      }
-
-      code {
-        color: $orange;
-        font-family: 'DM Mono', monospace;
-      }
-
-      pre {
-        padding-left: 30px;
-        background-color: #ebebeb;
-        border-radius: 5px;
-        margin: 15px 0;
-
-        code {
-          line-height: 15px;
-          font-family: 'DM Mono', monospace;
-        }
-      }
-
-      img {
-        margin: 30px 0;
-        padding: 10px;
-        border: solid 1px $orange;
-        border-radius: 5px;
-        background-color: #1E1E1E;
-        width: 80%;
-      }
-
-      a {
-        color: $orange;
-        transition: 0.5s;
-
-        &:hover {
-          color: $white;
-          transition: 0.3s;
-        }
-      }
-    }
   }
 
   @media screen and (min-width: 1216px) {
     .container {
-      display: flex;
-      padding: 0;
+    padding: 0;
+    align-items: start;
 
-      .article-content {
-        width: 75%;
-        margin-right: 50px;
-      }
+
+   .articles {
+     margin: 50px;
+     width: 500px;
+
+   }
     }
   }
 
