@@ -71,10 +71,11 @@
         line-height: 28px;
       }
 
-        code {
-          color: $orange;
-          font-family: 'DM Mono', monospace;
-        }
+      code {
+        color: $orange;
+        font-family: 'DM Mono', monospace;
+      }
+
       pre {
         padding-left: 30px;
         background-color: #ebebeb;
@@ -106,55 +107,18 @@
         }
       }
     }
-
-
-    .menu {
-      display: none;
-
-
-    }
-
   }
 
   @media screen and (min-width: 1216px) {
     .container {
-        display: flex;
-        padding: 0;
+      display: flex;
+      padding: 0;
 
       .article-content {
         width: 75%;
         margin-right: 50px;
       }
-
-      .menu {
-        display: block;
-
-        .toc2 {
-          color: $orange;
-          margin: 7px 0 5px 0;
-          transition: 0.5s;
-          font-size: 12px;
-
-          &:hover {
-            color: $white;
-            transition: 0.3s;
-          }
-        }
-
-        .toc3 {
-          margin: 5px 0 5px 15px;
-          transition: 0.5s;
-          font-size: 10px;
-
-          &:hover {
-            color: $orange;
-            transition: 0.3s;
-          }
-        }
-      }
     }
-
-
   }
 
 </style>

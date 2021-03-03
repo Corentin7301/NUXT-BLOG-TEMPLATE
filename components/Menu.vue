@@ -11,15 +11,49 @@
 <script>
   export default {
     props: {
-        toc: {
-            type: Array,
-            required: true
-        }
+      toc: {
+        type: Array,
+        required: true
+      }
     }
   }
 
 </script>
 
-<style>
+<style lang="scss">
+  .menu {
+    display: none;
+
+
+  }
+
+  @media screen and (min-width: 1216px) {
+    .menu {
+      display: block;
+
+      .toc2 {
+        color: $orange;
+        margin: 7px 0 5px 0;
+        transition: 0.5s;
+        font-size: 12px;
+
+        &:hover {
+          color: $white;
+          transition: 0.3s;
+        }
+      }
+
+      .toc3 {
+        margin: 5px 0 5px 15px;
+        transition: 0.5s;
+        font-size: 10px;
+
+        &:hover {
+          color: $orange;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
 
 </style>
