@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    layout: "indexLayout",
+    layout: "home",
 
     
     async asyncData({
