@@ -69,7 +69,7 @@ Une fois fait, eh bien je te propose de regarder si Git a été correctement ins
 ```bash
 git --version
 ```
-![git --version](https://res.cloudinary.com/corentin7301/image/upload/v1613673332/git-workflow-article/git_--version_m6rwpy.png)
+![git --version](https://res.cloudinary.com/corentin7301/image/upload/v1613673332/blog/git-workflow-article/git_--version_m6rwpy.png)
 
 Si tu as effectivement un numéro de version qui apparaît, alors **c'est tout bon !!**
 
@@ -152,7 +152,7 @@ On va regarder l'état de notre projet avec la commande :
 ```bash
 git status
 ```
-![git-status](https://res.cloudinary.com/corentin7301/image/upload/v1614094265/git-workflow-article/git_status_pw9lzi.png)
+![git-status](https://res.cloudinary.com/corentin7301/image/upload/v1614094265/blog/git-workflow-article/git_status_pw9lzi.png)
 
 Ça, ça veut dire qu'on a un fichier qui n'a pas été traqué, pas été 'stage'.
 En gros il faut lui dire que le fichier 'Readme.md' a été modifié et sera pris en compte pour le prochain commit (la prochaine 'sauvegarde').
@@ -167,7 +167,7 @@ Et pour vérifier on refait un :
 ```bash
 git status
 ```
-![git-status](https://res.cloudinary.com/corentin7301/image/upload/v1614094618/git-workflow-article/git_status2_karvmg.png)
+![git-status](https://res.cloudinary.com/corentin7301/image/upload/v1614094618/blog/git-workflow-article/git_status2_karvmg.png)
 
 C'est plus joli en vert non ? 😉
 
@@ -177,7 +177,7 @@ On vient d'ajouter notre fichier à la file d'attente prête à être 'commit'. 
 git commit -m "Mon premier commit"
 ```
 
-![git-commit](https://res.cloudinary.com/corentin7301/image/upload/v1614095051/git-workflow-article/git-commit_vdglm2.png)
+![git-commit](https://res.cloudinary.com/corentin7301/image/upload/v1614095051/blog/git-workflow-article/git-commit_vdglm2.png)
 
 **Bravo !!**
 
@@ -202,7 +202,7 @@ touch .gitignore
 ```
 Et dedans on met par exemple tous les fichiers .tmp :
 
-![gitignore](https://res.cloudinary.com/corentin7301/image/upload/v1614096050/git-workflow-article/gitignore_s7evnc.png)
+![gitignore](https://res.cloudinary.com/corentin7301/image/upload/v1614096050/blog/git-workflow-article/gitignore_s7evnc.png)
 
 En faisant cela, tous les fichiers finissant par .tmp (les fichiers temporaires) seront ignorés par Git.
 
@@ -227,7 +227,7 @@ git log
 ```
 On obtient ça :
 
-![git log](https://res.cloudinary.com/corentin7301/image/upload/v1614096749/git-workflow-article/git_log_ff3puu.png)
+![git log](https://res.cloudinary.com/corentin7301/image/upload/v1614096749/blog/git-workflow-article/git_log_ff3puu.png)
 
 On a alors plein d'infos ! Ligne par ligne ça donne :
 
@@ -247,7 +247,7 @@ Pour avoir quelque chose de plus lisible on peut faire :
 git log --oneline
 ```
 Ce qui donne :
-![git log oneline](https://res.cloudinary.com/corentin7301/image/upload/v1614097407/git-workflow-article/git_log_oneline_ohu9ir.png)
+![git log oneline](https://res.cloudinary.com/corentin7301/image/upload/v1614097407/blog/git-workflow-article/git_log_oneline_ohu9ir.png)
 
 Avec seulement l'identifiant et le nom du commit.
 
@@ -257,7 +257,7 @@ Une dernière chose là dessus, si je viens à faire une modification sur mon fi
 git diff
 ```
 
-![git diff](https://res.cloudinary.com/corentin7301/image/upload/v1614102097/git-workflow-article/git_diff_ilfqdl.png)
+![git diff](https://res.cloudinary.com/corentin7301/image/upload/v1614102097/blog/git-workflow-article/git_diff_ilfqdl.png)
 
 On voit alors que depuis le dernier commit, sur le fichier .gitignore, une ligne a été modifiée. "*.tmp" est devenu "\*.tmpgit".
 
@@ -273,7 +273,7 @@ on peut passer de branche en branche (on en parlera juste après), revenir sur u
 Suite à notre dernière intervention sur le .gitignore, le "*.tmp" est devenu "\*.tmpgit".
 
 Pour nettoyer cela et revenir à "*tmp" on commence par le modifier dans notre fichier :
- ![tmp](https://res.cloudinary.com/corentin7301/image/upload/v1614096050/git-workflow-article/gitignore_s7evnc.png)
+ ![tmp](https://res.cloudinary.com/corentin7301/image/upload/v1614096050/blog/git-workflow-article/gitignore_s7evnc.png)
 
 et on le commit :
 
@@ -288,7 +288,7 @@ puis on va regarder quelles ont été les modifications sur .gitignore :
 git log  --oneline -p .gitignore
 ```
 
-![git log -p](https://res.cloudinary.com/corentin7301/image/upload/v1614103546/git-workflow-article/git_log_-p_hft0h4.png)
+![git log -p](https://res.cloudinary.com/corentin7301/image/upload/v1614103546/blog/git-workflow-article/git_log_-p_hft0h4.png)
 
 On veux aller voir au commit initial du gitignore, soit le commit **"8bc2bdf"**.
 
@@ -297,7 +297,7 @@ Pour voir l'état de ce commit on va faire :
 ```bash
 git checkout 8bc2bdf
 ```
-![git checkout](https://res.cloudinary.com/corentin7301/image/upload/v1614104070/git-workflow-article/git_checkout_zismf4.png)
+![git checkout](https://res.cloudinary.com/corentin7301/image/upload/v1614104070/blog/git-workflow-article/git_checkout_zismf4.png)
 
 On est **sur** la "sauvegarde" 8bc2bdf (du nom "add gitignore").
 
@@ -347,7 +347,7 @@ Pour défaire ce commit avec "reverse", on va regarder le nom du commit :
 git log --oneline
 ```
 
-![git log](https://res.cloudinary.com/corentin7301/image/upload/v1614183100/git-workflow-article/git_log_index.html_agrvui.png)
+![git log](https://res.cloudinary.com/corentin7301/image/upload/v1614183100/blog/git-workflow-article/git_log_index.html_agrvui.png)
 
 On voit qu'il a l'indentifiant **f385eae**.
 
@@ -358,17 +358,17 @@ git revert f385eae
 ```
 ce qui nous ouvre ça :
 
-![git revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183293/git-workflow-article/revert_yr2utl.png)
+![git revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183293/blog/git-workflow-article/revert_yr2utl.png)
 
 Il s'agit de Vim, c'est un éditeur de texte. On peut changer le nom du commit, ici "Revert "add index.html"", et pour terminer écrire :wq ou sauvegarder le fichier puis fermer le fichier de l'éditeur (Ctrl + w).
 
 Avec un coup de ```git log``` on peut voir que notre revert a bien fonctionné :
 
-![git log revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183740/git-workflow-article/git_log_revert_r008if.png)
+![git log revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183740/blog/git-workflow-article/git_log_revert_r008if.png)
 
 Si on regarde dans l'arborescence, index.html n'est plus là :
 
-![git log revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183870/git-workflow-article/git_reverse_index_xxixpp.png)
+![git log revert](https://res.cloudinary.com/corentin7301/image/upload/v1614183870/blog/git-workflow-article/git_reverse_index_xxixpp.png)
 
 ### Avec la commande **RESET**,
 on peut également faire plusieurs choses.
@@ -528,7 +528,7 @@ git commit -m "add h2 in article.html"
 ```
 on a donc ça :
 
-![git log h2](https://res.cloudinary.com/corentin7301/image/upload/v1614187705/git-workflow-article/commit_h2_kichbj.png)
+![git log h2](https://res.cloudinary.com/corentin7301/image/upload/v1614187705/blog/git-workflow-article/commit_h2_kichbj.png)
 
 ce qui, on ne va pas se mentir, est loin d'être propre.
 
@@ -549,7 +549,7 @@ git add --all
 git commit -m "add h2 in indexDeux.html contact.html article.html"
 ```
 
-![git log commit h2](https://res.cloudinary.com/corentin7301/image/upload/v1614188137/git-workflow-article/git_log_commit_h2_fydtgu.png)
+![git log commit h2](https://res.cloudinary.com/corentin7301/image/upload/v1614188137/blog/git-workflow-article/git_log_commit_h2_fydtgu.png)
 
 C'est plus propre non ? 😉
 
@@ -599,7 +599,7 @@ Pour **voir** toutes nos branches on va venir faire :
 git branch
 ```
 
-![git branch](https://res.cloudinary.com/corentin7301/image/upload/v1614189993/git-workflow-article/git_branch_fyvnkx.png)
+![git branch](https://res.cloudinary.com/corentin7301/image/upload/v1614189993/blog/git-workflow-article/git_branch_fyvnkx.png)
 
 On voit donc que l'on a deux branches, la branche "add-page-story" que l'on vient juste de créer, et une branche "master" (ou "main" selon la version de git) avec un petite * à coté.
 
@@ -624,7 +624,7 @@ Avec un autre :
 ```bash
 git branch
 ```
-![git branch](https://res.cloudinary.com/corentin7301/image/upload/v1614190352/git-workflow-article/git_branch_checkout_e9p5mh.png)
+![git branch](https://res.cloudinary.com/corentin7301/image/upload/v1614190352/blog/git-workflow-article/git_branch_checkout_e9p5mh.png)
 
 On voit que l'on est sur notre nouvelle branche.
 
@@ -652,7 +652,7 @@ Maintenant revenons sur notre branche principale :
 git checkout master
 ```
 
-![arborescence master](https://res.cloudinary.com/corentin7301/image/upload/v1614190726/git-workflow-article/arbo_master_pq9hnf.png)
+![arborescence master](https://res.cloudinary.com/corentin7301/image/upload/v1614190726/blog/git-workflow-article/arbo_master_pq9hnf.png)
 
 **Aucune trace de "story.html" !**
 
@@ -672,7 +672,7 @@ git commit -m "add h3 in index.html"
 
 Pour visualiser les branches on peut imaginer un shéma comme cela :
 
-![git kraken1](https://res.cloudinary.com/corentin7301/image/upload/v1614191185/git-workflow-article/git_kraken1_dm9fvg.png)
+![git kraken1](https://res.cloudinary.com/corentin7301/image/upload/v1614191185/blog/git-workflow-article/git_kraken1_dm9fvg.png)
 
 La branche "add-page-story" contient un commit qui n'existe pas sur "master" et "master" a un commit inexistant sur "add-page-story".
 
@@ -709,7 +709,7 @@ git merge add-page-story
 
 On vient de rammener "add-page-story" sur "master" :
 
-![gitkraken merge](https://res.cloudinary.com/corentin7301/image/upload/v1614191991/git-workflow-article/git_merge_fydf0h.png)
+![gitkraken merge](https://res.cloudinary.com/corentin7301/image/upload/v1614191991/blog/git-workflow-article/git_merge_fydf0h.png)
 
 Et si on regarde nos fichiers on a bien notre fichier story.html qui est là et notre h3 dans indexDeux.html.
 
@@ -773,7 +773,7 @@ On a donc le même éditeur Vim que lors du ```revert```, que l'on peut alors sa
 
 On voit donc bien que notre dernier commit est :
 
-![git commit --amend](https://res.cloudinary.com/corentin7301/image/upload/v1614676963/git-workflow-article/amend_gsbvfu.png)
+![git commit --amend](https://res.cloudinary.com/corentin7301/image/upload/v1614676963/blog/git-workflow-article/amend_gsbvfu.png)
 
 Et c'est lui qui contient alors toutes nos dernières modifications, même si on les a fait en deux fois.
 
@@ -785,7 +785,7 @@ La commande ```rebase``` a le même objectif que ```merge```. La différence est
 
 Si, avec un merge, on ramène tout sur la branche "master" (par exemple) sous forme d'un :
 
-![git merge gitkraken](https://res.cloudinary.com/corentin7301/image/upload/v1614679392/git-workflow-article/merge_gitkraken_piluh5.png)
+![git merge gitkraken](https://res.cloudinary.com/corentin7301/image/upload/v1614679392/blog/git-workflow-article/merge_gitkraken_piluh5.png)
 
 ```Rebase``` va permettre d'ajouter tous les commits de la branche ("ici add-page-story") à la suite des commits de la branche "master".
 
@@ -823,7 +823,7 @@ git commit -m "add bonjour.md"
 ```
 On a donc ça :
 
-![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614680054/git-workflow-article/test_merge_1_mbhfwo.png)
+![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614680054/blog/git-workflow-article/test_merge_1_mbhfwo.png)
 
 Maintenant on va merger "test-merge" sur master :
 
@@ -831,7 +831,7 @@ Maintenant on va merger "test-merge" sur master :
 git merge test-merge
 ```
 
-![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614680194/git-workflow-article/test_merge_2_i1luct.png)
+![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614680194/blog/git-workflow-article/test_merge_2_i1luct.png)
 
 On voit qu'on a une nouvelle entrée dans notre historique de master qui est "Merge branch 'test-merge'. Ce n'est pas très beau et surtout on perd tout l'historique de la branche "test-merge".
 
@@ -877,7 +877,7 @@ git commit -m "add rebase.md"
 
 On a donc ça :
 
-![gitkraken test rebase](https://res.cloudinary.com/corentin7301/image/upload/v1614681364/git-workflow-article/gitkraken_test_rebase_1_u6gubo.png)
+![gitkraken test rebase](https://res.cloudinary.com/corentin7301/image/upload/v1614681364/blog/git-workflow-article/gitkraken_test_rebase_1_u6gubo.png)
 
 Maintenant on va rebase "test-rebase" sur master :
 
@@ -895,7 +895,7 @@ git merge test-rebase
 ```
 
 
-![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614681795/git-workflow-article/gitkraken_test_rebase_2_gp6bdu.png)
+![gitkraken test merge](https://res.cloudinary.com/corentin7301/image/upload/v1614681795/blog/git-workflow-article/gitkraken_test_rebase_2_gp6bdu.png)
 
 On voit bien que l'on a gardé tout notre historique. On a "add navbar.html", "del contact.html" et "add rebase.md" au lieu d'un (très moche) Merge branch 'test-rebase".
 
@@ -918,7 +918,7 @@ git rebase -i 'nom-de-la-branche'
 
 Git va ouvrir un éditeur Vim comme ceci :
 
-![git rebase -i](https://res.cloudinary.com/corentin7301/image/upload/v1614682456/git-workflow-article/rebase-i_udmcww.png)
+![git rebase -i](https://res.cloudinary.com/corentin7301/image/upload/v1614682456/blog/git-workflow-article/rebase-i_udmcww.png)
 
 Ou on va pouvoir modifier les commits avec ces commandes :
 
@@ -1105,7 +1105,7 @@ git branch -r
 
 On a bien notre branche master sur origin :
 
-![git branch -r](https://res.cloudinary.com/corentin7301/image/upload/v1614687984/git-workflow-article/git_branch_-r_njkbpk.png)
+![git branch -r](https://res.cloudinary.com/corentin7301/image/upload/v1614687984/blog/git-workflow-article/git_branch_-r_njkbpk.png)
 
 On peut réessayer avec une nouvelle branche :
 
@@ -1246,7 +1246,7 @@ git push origin main // ma branche s'appelle "main"
 
 Maintenant si tu retourne sur Github et que tu rafraichis la page, tu peux voir ton magnifique **readme** qui apparaît !
 
-![github](https://res.cloudinary.com/corentin7301/image/upload/v1614694700/git-workflow-article/github_b17lvh.png)
+![github](https://res.cloudinary.com/corentin7301/image/upload/v1614694700/blog/git-workflow-article/github_b17lvh.png)
 
 Presque magique non ? 🧙🏼‍♂️😉
 
@@ -1284,7 +1284,7 @@ Et cette fois, celui-ci, tu vas pouvoir le **cloner**.
 
 Si on fait un ```git log --oneline``` dans ce dossier, on peut voir que l'on récupère également tout l'historique :
 
-![o79-community fork](https://res.cloudinary.com/corentin7301/image/upload/v1614696426/git-workflow-article/o79_fork_sctt5e.png)
+![o79-community fork](https://res.cloudinary.com/corentin7301/image/upload/v1614696426/blog/git-workflow-article/o79_fork_sctt5e.png)
 
 On peut aussi essayer de lister toutes les branches :
 
@@ -1292,7 +1292,7 @@ On peut aussi essayer de lister toutes les branches :
 git branch -a
 ```
 
-![o79-community branch -a](https://res.cloudinary.com/corentin7301/image/upload/v1614696777/git-workflow-article/git_branch_-a_zz09je.png)
+![o79-community branch -a](https://res.cloudinary.com/corentin7301/image/upload/v1614696777/blog/git-workflow-article/git_branch_-a_zz09je.png)
 
 
 Lorsqu'on commence à travailler sur un **fork** il faut **tout de suite créer une nouvelle branche** !!
@@ -1402,13 +1402,13 @@ Cette extension est une aide précieuse dans Github, elle permet de naviguer ent
 
 Sur la capture d'écran, c'est l'onglet qui est ouvert à gauche de l'écran.
 
-![Octotree](https://res.cloudinary.com/corentin7301/image/upload/v1614701708/git-workflow-article/octotree_sxbwod.png)
+![Octotree](https://res.cloudinary.com/corentin7301/image/upload/v1614701708/blog/git-workflow-article/octotree_sxbwod.png)
 
 ### Github Desktop
 
 Tout d'abord, [Github Desktop](https://desktop.github.com/) est un client Github qui va permettre de ne presque plus passer par les lignes de commandes.
 
-![Github Desktop](https://res.cloudinary.com/corentin7301/image/upload/v1614700487/git-workflow-article/github_desktop_wd7yi6.png)
+![Github Desktop](https://res.cloudinary.com/corentin7301/image/upload/v1614700487/blog/git-workflow-article/github_desktop_wd7yi6.png)
 
 L'interface est très simple et en quelques minutes tu vas en comprendre le fonctionnement.
 
@@ -1416,7 +1416,7 @@ L'interface est très simple et en quelques minutes tu vas en comprendre le fonc
 
 Dans la même lignée on retrouve [GitKraken](https://www.gitkraken.com/). C'est avec cet outil que j'ai pu faire les demonstrations de ```merge``` et de ```fork```.
 
-![GitKraken](https://res.cloudinary.com/corentin7301/image/upload/v1614700707/git-workflow-article/gitkraken_pr0gv4.png)
+![GitKraken](https://res.cloudinary.com/corentin7301/image/upload/v1614700707/blog/git-workflow-article/gitkraken_pr0gv4.png)
 
 Il est également très simple et joli. Mais ce qui fait sa grande force c'est son système de visualisation de l'historique qui rend la compréhension des branches bien plus simple.
 
@@ -1425,7 +1425,7 @@ Il est également très simple et joli. Mais ce qui fait sa grande force c'est s
 
 Il existe aussi [Source Tree](https://www.sourcetreeapp.com/) que j'ai utilisé pendant un moment mais que j'ai laissé tomber à cause de sa lenteur de son habitude de crasher.
 
-![Source Tree](https://res.cloudinary.com/corentin7301/image/upload/v1614700996/git-workflow-article/source_tree_bxx10k.png)
+![Source Tree](https://res.cloudinary.com/corentin7301/image/upload/v1614700996/blog/git-workflow-article/source_tree_bxx10k.png)
 
 L'interface est un peu plus brute que sur les deux autres mais il reste efficace. Le système de branches est sympa même si celui de GitKraken est plus élaboré.
 
@@ -1433,7 +1433,7 @@ L'interface est un peu plus brute que sur les deux autres mais il reste efficace
 
 Dans l'éditeur de code VS Code, on retrouve tout un panneau concernant Git (à droite sur la capture d'écran).
 
-![VS Code](https://res.cloudinary.com/corentin7301/image/upload/v1614701500/git-workflow-article/vs_code_yueca4.png)
+![VS Code](https://res.cloudinary.com/corentin7301/image/upload/v1614701500/blog/git-workflow-article/vs_code_yueca4.png)
 
 Le gros avantage est que son utilisation s'intègre dans le workflow de l'utilisateur puisqu'il reste sur le même logiciel.
 

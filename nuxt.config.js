@@ -43,12 +43,20 @@ export default {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxt/content',
-    '@nuxtjs/dayjs'
+    '@nuxtjs/dayjs',
+    '@nuxtjs/cloudinary'
   ],
   // Optional
   dayjs: {
     locales: ['fr'],
     defaultLocale: 'fr',
+  },
+
+  cloudinary: {
+    cloudName: 'corentin7301',
+    apiKey: '446663536317113',
+    apiSecret: 'MSjOmtsE0AXPfRgVBnTPnsjbp5M',
+    useComponent: true
   },
 
   content: {

@@ -15,6 +15,9 @@
 
 <script>
   export default {
+    layout: "indexLayout",
+
+    
     async asyncData({
       $content
     }) {
