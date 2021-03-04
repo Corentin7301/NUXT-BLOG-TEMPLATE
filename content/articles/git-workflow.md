@@ -1592,24 +1592,22 @@ ssh-keygen -t rsa -C "ton-email" // Permet de générer une clé SSH
 ```
 
 
-<br>
-<br>
-<br>
+
 
 ************
 
 ## Ressources :
 
 [Git](https://fr.wikipedia.org/wiki/Git)
-<br>
+
 [Gestion de version](https://fr.wikipedia.org/wiki/Gestion_de_versions)
-<br>
+
 [GitHub](https://fr.wikipedia.org/wiki/GitHub)
-<br>
+
 [Git config](https://git-scm.com/book/fr/v2/Personnalisation-de-Git-Configuration-de-Git)
-<br>
+
 [Grafikart](https://grafikart.fr/)
-<br>
+
 [Openclassroom](https://openclassrooms.com/fr/courses/5641721-utilisez-git-et-github-pour-vos-projets-de-developpement)
-<br>
+
 [Git merge / Git rebase](https://www.atlassian.com/fr/git/tutorials/merging-vs-rebasing)
