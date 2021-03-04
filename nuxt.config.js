@@ -1,17 +1,37 @@
-import {
-  info
-} from 'node-sass';
+const create = async (feed) => {
+  feed.options = {
+    title: 'Blog Corentin PERROUX',
+    link: 'https://blog.corentinperroux.fr/feed.xml',
+    // link: 'http://localhost:3000/feed.xml',
+    description: 'Blog Corentin PERROUX'
+  }
 
-// const createSitemapRoutes = async () => {
-//   let routes = [];
-//   const { $content } = require('@nuxt/content')
-//   if (infoPage === null || infoPage.length === 0)
-//     infoPage = await $content('articles').fetch();
-//   for (const article of infoPage) {
-//     routes.push(`articles/${article.slug}`);
-//   }
-//   return routes;
-// }
+  const {
+    $content
+  } = require('@nuxt/content')
+  const posts = await $content('articles').fetch()
+
+  feed.addCategory('Nuxt.js')
+
+  feed.addContributor({
+    name: 'Corentin PERROUX',
+    email: 'corentin7301@gmail.com',
+    link: 'https://blog.corentinperroux.fr'
+  })
+
+  for (const post of posts) {
+
+    feed.addItem({
+      title: post.title,
+      slug: post.slug,
+      description: post.description,
+      link: `https://blog.corentinperroux.fr/articles/${post.slug}`,
+      // link: `http://localhost:3000/articles/${post.slug}`,
+      content: post.bodyText
+
+    })
+  }
+}
 
 export default {
   // ssr: false,
@@ -149,19 +169,33 @@ export default {
     '@nuxt/content',
     '@nuxtjs/dayjs',
     '@nuxtjs/cloudinary',
+    '@nuxtjs/feed',
+    '@nuxtjs/markdownit',
 
 
     // always at the end of array
     '@nuxtjs/sitemap',
+
   ],
+
+  feed: [{
+    create,
+    path: '/feed.xml',
+    cacheTime: 1000 * 60 * 15,
+    type: 'rss2',
+    data: ["articles"]
+  }, ],
+
 
 
   sitemap: {
     hostname: 'https://blog.corentinperroux.fr',
     routes: async () => {
-      const { $content } = require('@nuxt/content')
+      const {
+        $content
+      } = require('@nuxt/content')
 
-      const articles = await $content('articles').only(['path','createdAt']).fetch()
+      const articles = await $content('articles').only(['path', 'createdAt']).fetch()
       const dynamicArticles = articles.map((article) => {
         return {
           url: article.path,
@@ -173,14 +207,19 @@ export default {
         // "/contact",
         // ...
       ]
-      return [ ...dynamicArticles, ...staticPages]
-    },  
+      return [...dynamicArticles, ...staticPages]
+    },
   },
 
 
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    // use: ['markdown-it-div', 'markdown-it-attrs'],
+  },
 
 
-  // Optional
   dayjs: {
     locales: ['fr'],
     defaultLocale: 'fr',
@@ -208,5 +247,19 @@ export default {
   pageTransition: {
     name: 'page-transition',
     mode: 'out-in',
+  },
+
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      const md = require('markdown-it')();
+      if (document.extension === '.md') {
+        const { text } = require('reading-time')(document.text)
+  
+        document.readingTime = text
+  
+        const mdToHtml = md.render(document.text)
+        document.bodyText = mdToHtml
+      }
+    }
   }
 }
