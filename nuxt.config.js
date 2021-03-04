@@ -1,3 +1,18 @@
+import {
+  info
+} from 'node-sass';
+
+// const createSitemapRoutes = async () => {
+//   let routes = [];
+//   const { $content } = require('@nuxt/content')
+//   if (infoPage === null || infoPage.length === 0)
+//     infoPage = await $content('articles').fetch();
+//   for (const article of infoPage) {
+//     routes.push(`articles/${article.slug}`);
+//   }
+//   return routes;
+// }
+
 export default {
   // ssr: false,
   // target: 'static',
@@ -133,8 +148,38 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxt/content',
     '@nuxtjs/dayjs',
-    '@nuxtjs/cloudinary'
+    '@nuxtjs/cloudinary',
+
+
+    // always at the end of array
+    '@nuxtjs/sitemap',
   ],
+
+
+  sitemap: {
+    hostname: 'https://blog.corentinperroux.fr',
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+
+      const articles = await $content('articles').only(['path','createdAt']).fetch()
+      const dynamicArticles = articles.map((article) => {
+        return {
+          url: article.path,
+          priority: 1,
+          lastmod: article.createdAt
+        }
+      })
+      const staticPages = [
+        // "/contact",
+        // ...
+      ]
+      return [ ...dynamicArticles, ...staticPages]
+    },  
+  },
+
+
+
+
   // Optional
   dayjs: {
     locales: ['fr'],
