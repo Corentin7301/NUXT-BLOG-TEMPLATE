@@ -22,13 +22,13 @@ Parce que oui, c'est super simple en fait ! (pas le débuguage du projet hein �
 ## Un logiciel de gestion de versions ?
 
 En fait on appelle ça du versionnage de code.
-Ca consiste à gérer l'ensemble des versions d'un ou plusieurs fichiers.
+Ça consiste à gérer l'ensemble des versions d'un ou plusieurs fichiers.
 
 C'est un outil qui se veut simple et performant, dont la principale tâche est de gérer l'évolution du contenu d'une arborescence.
 
 En gros, il va gérer (pas tout tout seul mais presque 😉) toutes les modifications qui auront lieu sur tes fichiers, et **surtout**, stocker toutes les versions de tes fichiers !
 
-Par exemple, tu développes un site pour Jean, Jean veut un formulaire de contact (nom, prénom, mail) que tu codes. Simple. Sauf qu'un mois après, Jean veut ajouter un champs pour le numéro de téléphone à son formulaire. Tu l'ajoute et tu "commit" (on le verra plus tard mais entends "sauvegarde") et hop ! c'est en ligne. 
+Par exemple, tu développes un site pour Jean, Jean veut un formulaire de contact (nom, prénom, mail) que tu codes. Simple. Sauf qu'un mois après, Jean veut ajouter un champs pour le numéro de téléphone à son formulaire. Tu l'ajoutes et tu "commit" (on le verra plus tard mais entends "sauvegarde") et hop ! c'est en ligne. 
 
 Et bien Git va sauvegarder les deux versions du code, celle sans et celle avec le champs "téléphone". Et, puisque c'est sauvegardé, tu pourra voir les modifications et revenir dessus au besoin.
 
