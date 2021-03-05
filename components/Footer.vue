@@ -2,7 +2,7 @@
   <div id="footer">
     <h2 @click="scrolltop()">Corentin perroux</h2>
     <div class="footer-component">
-      <social-share />
+      <FooterLinks />
     </div>
     <Copyright />
 

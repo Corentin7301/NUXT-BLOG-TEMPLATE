@@ -1,9 +1,11 @@
 <template>
   <div class="container">
-    <div class="article-content">
-      <nuxt-content :document="page" />
+    <social-share :page="page" />
+    <div class="content">
+      <nuxt-content :document="page" class="nuxt-content" />
+      <Menu :toc="page.toc" />
     </div>
-    <Menu :toc="page.toc" />
+    <social-share :page="page" class="social-share-bottom"/>
   </div>
 </template>
 
@@ -134,77 +136,86 @@
     color: $white;
     text-decoration: none;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
-    .article-content {
-      width: 100%;
-    }
+    .content {
+      display: flex;
 
-
-
-    .article-content .nuxt-content {
-      h1 {
-        color: $orange;
-        margin-bottom: 32px;
-        font-size: 45px;
-      }
-
-      h2 {
-        color: $orange;
-        margin: 40px 0 25px 0;
-        font-size: 30px;
-      }
-
-      h3 {
-        color: $orange;
-        margin: 30px 0 15px 0;
-        font-size: 20px;
+      .nuxt-content {
+        width: 100%;
 
       }
 
-      h4 {
-        color: $orange;
-        margin: 30px 0 15px 0;
 
-      }
 
-      p {
-        margin: 15px 0;
-        line-height: 28px;
-      }
+      .nuxt-content {
+        width: 100%;
 
-      code {
-        color: $orange;
-        font-family: 'DM Mono', monospace;
-      }
+        h1 {
+          color: $orange;
+          margin-bottom: 32px;
+          font-size: 45px;
+        }
 
-      pre {
-        padding-left: 30px;
-        background-color: #ebebeb;
-        border-radius: 5px;
-        margin: 15px 0;
+        h2 {
+          color: $orange;
+          margin: 40px 0 25px 0;
+          font-size: 30px;
+        }
+
+        h3 {
+          color: $orange;
+          margin: 30px 0 15px 0;
+          font-size: 20px;
+
+        }
+
+        h4 {
+          color: $orange;
+          margin: 30px 0 15px 0;
+
+        }
+
+        p {
+          margin: 15px 0;
+          line-height: 28px;
+        }
 
         code {
-          line-height: 15px;
+          color: $orange;
           font-family: 'DM Mono', monospace;
         }
-      }
 
-      img {
-        margin: 30px 0;
-        padding: 10px;
-        border: solid 1px $orange;
-        border-radius: 5px;
-        background-color: #1E1E1E;
-        width: 80%;
-      }
+        pre {
+          padding-left: 30px;
+          background-color: #ebebeb;
+          border-radius: 5px;
+          margin: 15px 0;
 
-      a {
-        color: $orange;
-        transition: 0.5s;
+          code {
+            line-height: 15px;
+            font-family: 'DM Mono', monospace;
+          }
+        }
 
-        &:hover {
-          color: $white;
-          transition: 0.3s;
+        img {
+          margin: 30px 0;
+          padding: 10px;
+          border: solid 1px $orange;
+          border-radius: 5px;
+          background-color: #1E1E1E;
+          width: 90%;
+        }
+
+        a {
+          color: $orange;
+          transition: 0.5s;
+
+          &:hover {
+            color: $white;
+            transition: 0.3s;
+          }
         }
       }
     }
@@ -215,9 +226,18 @@
       display: flex;
       padding: 0;
 
-      .article-content {
+      .content {
         width: 75%;
         margin-right: 50px;
+
+        .nuxt-content {
+          img {
+            width: 80%;
+          }
+        }
+      }
+      .social-share-bottom {
+        display: none;
       }
     }
   }

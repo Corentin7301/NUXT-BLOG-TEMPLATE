@@ -96,6 +96,7 @@
         right: 30px;
         z-index: 99;
         cursor: pointer;
+        color: $orange;
       }
 
       .none {

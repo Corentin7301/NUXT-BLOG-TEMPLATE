@@ -26,7 +26,11 @@
   @media screen and (min-width: 1216px) {
     .menu {
       display: block;
-
+      margin-left: 40px;
+      
+      p {
+        width: 250px;
+      }
       .toc2 {
         color: $orange;
         margin: 7px 0 5px 0;

@@ -1,7 +1,9 @@
 const create = async (feed) => {
   feed.options = {
     title: 'Blog Corentin PERROUX',
+      // FOR PRODUCTION
     link: 'https://blog.corentinperroux.fr/feed.xml',
+      // FOR DEV
     // link: 'http://localhost:3000/feed.xml',
     description: 'Blog Corentin PERROUX'
   }
@@ -26,7 +28,6 @@ const create = async (feed) => {
       slug: post.slug,
       description: post.description,
       link: `https://blog.corentinperroux.fr/articles/${post.slug}`,
-      // link: `http://localhost:3000/articles/${post.slug}`,
       content: post.bodyText
 
     })
@@ -171,6 +172,7 @@ export default {
     '@nuxtjs/cloudinary',
     '@nuxtjs/feed',
     '@nuxtjs/markdownit',
+    'vue-social-sharing/nuxt',
 
 
     // always at the end of array
