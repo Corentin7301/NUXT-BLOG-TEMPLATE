@@ -15,17 +15,13 @@
     background-color: $black;
     font-family: 'Montserrat', sans-serif;
     color: $white;
+    text-decoration: none;
 
     .img_head {
       margin-bottom: 20px;
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-
-      #img_head {
-        width: 100%;
-      }
     }
 
     @media screen and (min-width: 1216px) {

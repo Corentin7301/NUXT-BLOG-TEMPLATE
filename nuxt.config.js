@@ -218,6 +218,7 @@ export default {
     preset: 'default',
     linkify: true,
     breaks: true,
+        // for add div and attributes in md file
     // use: ['markdown-it-div', 'markdown-it-attrs'],
   },
 

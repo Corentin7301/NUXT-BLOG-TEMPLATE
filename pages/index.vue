@@ -51,12 +51,6 @@
   .containerIndex {
     margin: 0 auto;
     padding: 10px;
-    min-height: 100vh;
-    max-width: 100vw;
-    background-color: $black;
-    color: $white;
-    text-decoration: none;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

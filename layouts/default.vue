@@ -11,6 +11,7 @@
     background-color: $black;
     font-family: 'Montserrat', sans-serif;
     color: $white;
+    text-decoration: none;
   }
 
 </style>
