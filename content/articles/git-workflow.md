@@ -1413,7 +1413,7 @@ Tout d'abord, [Github Desktop](https://desktop.github.com/) est un client Github
 
 L'interface est très simple et en quelques minutes tu vas en comprendre le fonctionnement.
 
-### Github Desktop
+### GitKraken
 
 Dans la même lignée on retrouve [GitKraken](https://www.gitkraken.com/). C'est avec cet outil que j'ai pu faire les demonstrations de ```merge``` et de ```fork```.
 
