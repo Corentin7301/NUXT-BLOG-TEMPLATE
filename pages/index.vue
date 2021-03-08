@@ -37,11 +37,6 @@
       }
     },
 
-    methods: {
-      moveTo(slug) {
-        this.$router.push(`/${slug}`)
-      }
-    },
 
   }
 
