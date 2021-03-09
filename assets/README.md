@@ -1,7 +1,7 @@
 # ASSETS
 
-**This directory is not required, you can delete it if you don't want to use it.**
+Change colors in colors.scss
 
-This directory contains your un-compiled assets such as LESS, SASS, or JavaScript.
+Change colors and backgrounds colors in ::selection in main.scss
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#webpacked).
+Change background color in body main.scss

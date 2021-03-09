@@ -1,7 +1,7 @@
 # COMPONENTS
 
-**This directory is not required, you can delete it if you don't want to use it.**
+Change copyright informations in copyright.vue
 
-The components directory contains your Vue.js Components.
+Change blog link in socialShare
 
-_Nuxt.js doesn't supercharge these components._
+Change name creator in Header.vue
