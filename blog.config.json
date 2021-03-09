@@ -1,0 +1,17 @@
+    {
+        "siteUrl": "#",
+        "siteName": "BLOG-TEMPLATE",
+        "siteTitle": "BLOG-TEMPLATE",
+        "siteDescription": "Blog-template by Corentin PERROUX",
+        "author": "CORENTIN PERROUX",
+        "copyright": "CORENTIN PERROUX",
+        "blogMetaDescription": "Blog-template by Corentin PERROUX",
+        "twitterUrl":"https://twitter.com/CorentinPerroux",
+        "twitterAccount":"@CorentinPerroux",
+        "twitterCardImage":"https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-production/3075/nuxtjs-2.jpg",
+        "blog": {
+            "articleCountPerPage": 9,
+            "displayNumberOfArticles": false
+        },
+        "siteType": "website"
+    }
