@@ -2,6 +2,13 @@
 # Created by https://www.toptal.com/developers/gitignore/api/nuxt,node,vuejs,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=nuxt,node,vuejs,visualstudiocode
 
+# DECOMMENT LINES 8, 9, 10
+
+# dotenv environment variables file
+.env
+.env.test
+.env*.local
+
 ### Node ###
 # Logs
 logs
@@ -73,10 +80,6 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-.env.test
-.env*.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

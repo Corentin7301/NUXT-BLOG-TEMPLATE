@@ -1,11 +1,11 @@
 const create = async (feed) => {
   feed.options = {
-    title: 'Blog Corentin PERROUX',
+    title: 'BLOG-NAME',
       // FOR PRODUCTION
-    link: 'https://blog.corentinperroux.fr/feed.xml',
+    link: 'https://BLOG-LINK/feed.xml',
       // FOR DEV
     // link: 'http://localhost:3000/feed.xml',
-    description: 'Blog Corentin PERROUX'
+    description: 'blog-meta-description'
   }
 
   const {
@@ -18,7 +18,7 @@ const create = async (feed) => {
   feed.addContributor({
     name: 'Corentin PERROUX',
     email: 'corentin7301@gmail.com',
-    link: 'https://blog.corentinperroux.fr'
+    link: 'https://BLOG-LINK'
   })
 
   for (const post of posts) {
@@ -27,7 +27,7 @@ const create = async (feed) => {
       title: post.title,
       slug: post.slug,
       description: post.description,
-      link: `https://blog.corentinperroux.fr/articles/${post.slug}`,
+      link: `https://BLOG-LINK/articles/${post.slug}`,
       content: post.bodyText
 
     })
@@ -38,7 +38,7 @@ export default {
   // ssr: false,
   // target: 'static',
   head: {
-    title: 'Blog Corentin PERROUX',
+    title: 'BLOG-NAME',
     meta: [{
         charset: 'utf-8'
       },
@@ -50,13 +50,13 @@ export default {
 
         hid: 'description',
         name: 'description',
-        content: "Blog Corentin PERROUX"
+        content: "blog-meta-description"
       },
 
 
       {
         property: "og:site_name",
-        content: "Blog Corentin PERROUX"
+        content: "BLOG-NAME"
       },
       {
         hid: "og:type",
@@ -66,17 +66,17 @@ export default {
       {
         hid: "og:url",
         property: "og:url",
-        content: `https://blog.corentinperroux.fr`,
+        content: `https://BLOG-LINK`,
       },
       {
         hid: "og:title",
         property: "og:title",
-        content: "Blog Corentin PERROUX",
+        content: "BLOG-NAME",
       },
       {
         hid: "og:description",
         property: "og:description",
-        content: "Blog Corentin PERROUX",
+        content: "blog-meta-description",
       },
       {
         hid: "og:image",
@@ -94,28 +94,28 @@ export default {
 
       {
         name: "twitter:site",
-        content: "@corentinperroux"
+        content: "TWITTER-NAME"
       },
       // { name: "twitter:card", content: "summary_large_image" }, 
       {
         hid: "twitter:url",
         name: "twitter:url",
-        content: "https://blog.corentinperroux.fr",
+        content: "https://BLOG-LINK",
       },
       {
         hid: "twitter:title",
         name: "twitter:title",
-        content: "Blog Corentin PERROUX",
+        content: "BLOG-NAME",
       },
       {
         hid: "twitter:description",
         name: "twitter:description",
-        content: "Blog Corentin PERROUX",
+        content: "blog-meta-description",
       },
       {
         hid: "twitter:image",
         name: "twitter:image",
-        content: "https://res.cloudinary.com/corentin7301/image/upload/v1614777566/blog/img-head_odujcj.jpg",
+        content: "twitter-card-image",
       },
 
     ],
@@ -125,13 +125,13 @@ export default {
       {
         hid: "canonical",
         rel: "canonical",
-        href: "https://blog.corentinperroux.fr",
+        href: "https://BLOG-LINK",
       },
 
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.png'
+        href: '/favicon.svg'
       },
       {
         rel: 'stylesheet',
@@ -139,7 +139,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap'
       },
       {
         rel: 'stylesheet',
@@ -191,7 +191,7 @@ export default {
 
 
   sitemap: {
-    hostname: 'https://blog.corentinperroux.fr',
+    hostname: 'https://BLOG-LINK',
     routes: async () => {
       const {
         $content
@@ -229,9 +229,9 @@ export default {
   },
 
   cloudinary: {
-    cloudName: 'corentin7301',
-    apiKey: '446663536317113',
-    apiSecret: 'MSjOmtsE0AXPfRgVBnTPnsjbp5M',
+    cloudName: process.env.CLOUD_NAME,
+    apiKey: process.env.API_KEY,
+    apiSecret: process.env.API_SECRET,
     useComponent: true
   },
 

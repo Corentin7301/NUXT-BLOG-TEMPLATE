@@ -1,15 +1,6 @@
 <template>
   <div class="containerIndex">
-    <nuxt-link class="articles" v-for="infoPage in infoPage" :key="infoPage.slug" :to="`/articles/${infoPage.slug}`">
-      <img :src="infoPage.urlImage" :alt="infoPage.title">
-      <h2>{{ infoPage.title }}</h2>
-      <h3>{{ infoPage.description }}</h3>
-      <code>Posté le : {{$dayjs( infoPage.createdAt ).format("DD/MM/YYYY")}}</code>
-    </nuxt-link>
-    <div class="article-content">
-      <nuxt-content :document="infoPage" />
-    </div>
-    <Menu :toc="infoPage.toc" />
+    <h1>PAGE ACCUEIL</h1>
   </div>
 </template>
 
@@ -18,26 +9,13 @@
     layout: "home",
 
     head: {
-      title: "Blog Corentin PERROUX",
+      title: "BLOG-TEMPLATE",
       meta: [{
         hid: 'description',
         name: 'description',
-        content: "Blog Corentin PERROUX"
+        content: "BLOG-TEMPLATE"
       }],
     },
-
-    
-    async asyncData({
-      $content
-    }) {
-      const infoPage = await $content('articles').only(['title', 'slug', 'description', 'createdAt', 'urlImage'])
-        .fetch()
-      return {
-        infoPage
-      }
-    },
-
-
   }
 
 </script>
@@ -49,45 +27,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-    .articles {
-      margin: 50px;
-      cursor: pointer;
-      width: 300px;
-
-      img {
-        width: 100%;
-        border-radius: 5px;
-      }
-
-      h2 {
-        font-size: 35px;
-        color: $orange;
-        margin: 10px 0 5px 0;
-      }
-
-      h3 {
-        font-size: 20px;
-        margin: 5px 0;
-      }
-
-      code {
-        font-size: 15px;
-        margin: 5px 0;
-      }
-    }
+    min-height: 100vh;
   }
 
   @media screen and (min-width: 1216px) {
     .containerIndex {
       padding: 0;
       align-items: start;
-
-      .articles {
-        margin: 50px;
-        width: 500px;
-      }
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 

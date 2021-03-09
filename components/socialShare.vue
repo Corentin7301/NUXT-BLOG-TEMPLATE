@@ -1,26 +1,26 @@
 <template>
   <div class="social-share">
     <!-- FACEBOOK SHARE -->
-    <ShareNetwork network="facebook" :url="`https://blog.corentinperroux.fr/articles/${page.slug}`" :title="page.title"
+    <ShareNetwork network="facebook" :url="`https://SITE-LINK/articles/${page.slug}`" :title="page.title"
       :description="page.description" quote="" hashtags="">
       <i class="fab fa-facebook-square"></i>
     </ShareNetwork>
     <!-- LINKEDIN SHARE -->
-    <ShareNetwork network="linkedin" :url="`https://blog.corentinperroux.fr/articles/${page.slug}`" :title="page.title"
+    <ShareNetwork network="linkedin" :url="`https://SITE-LINK/articles/${page.slug}`" :title="page.title"
       :description="page.description">
       <i class="fab fa-linkedin"></i>
     </ShareNetwork>
     <!-- TWITTER SHARE -->
-    <ShareNetwork network="twitter" :url="`https://blog.corentinperroux.fr/articles/${page.slug}`" :title="page.title"
+    <ShareNetwork network="twitter" :url="`https://SITE-LINK/articles/${page.slug}`" :title="page.title"
       :description="page.description">
       <i class="fab fa-twitter-square"></i>
     </ShareNetwork>
     <!-- EMAIL SHARE -->
-    <ShareNetwork network="email" :url="`https://blog.corentinperroux.fr/articles/${page.slug}`" :title="page.title"
+    <ShareNetwork network="email" :url="`https://SITE-LINK/articles/${page.slug}`" :title="page.title"
       :description="page.description">
       <i class="fas fa-envelope"></i>
     </ShareNetwork>
-    <ShareNetwork network="sms" :url="`https://blog.corentinperroux.fr/articles/${page.slug}`" :title="page.title"
+    <ShareNetwork network="sms" :url="`https://SITE-LINK/articles/${page.slug}`" :title="page.title"
       :description="page.description">
       <i class="fas fa-phone-square-alt sms"></i>
     </ShareNetwork>
@@ -45,7 +45,13 @@
     i {
       font-size: 20px;
       margin: 0 2px 15px 2px;
-      color: $orange;
+      color: $green;
+      transition: 0.3s;
+
+      &:hover {
+      color: $white;
+      transition: 0.2s;
+      }
     }
   }
 

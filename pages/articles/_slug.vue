@@ -3,7 +3,7 @@
     <social-share :page="page" />
     <div class="content">
       <nuxt-content :document="page" class="nuxt-content" />
-      <Menu :toc="page.toc" />
+      <ArticleToc :toc="page.toc" />
     </div>
     <social-share :page="page" class="social-share-bottom"/>
   </div>
@@ -23,7 +23,7 @@
           {
             hid: "og:url",
             property: "og:url",
-            content: `https://blog.corentinperroux.fr/articles/${this.page.slug}`,
+            content: `https://BLOG-LINK/articles/${this.page.slug}`,
           },
           {
             hid: "og:title",
@@ -56,7 +56,7 @@
           {
             hid: "twitter:url",
             name: "twitter:url",
-            content: `https://blog.corentinperroux.fr/articles/${this.page.slug}`,
+            content: `https://BLOG-LINK/articles/${this.page.slug}`,
           },
           {
             hid: "twitter:title",
@@ -92,7 +92,7 @@
           },
           {
             name: "twitter:data1",
-            content: "Corentin PERROUX"
+            content: "CREATOR"
           },
           {
             name: "twitter:label2",
@@ -106,22 +106,18 @@
         link: [{
           hid: "canonical",
           rel: "canonical",
-          href: `https://blog.corentinperroux.fr/articles/${this.page.slug}`,
+          href: `https://BLOG-LINK/articles/${this.page.slug}`,
         }, ],
       }
     },
 
-    async asyncData({
-      $content,
-      params
-    }) {
+    async asyncData({ $content, params }) {
       const slug = params.slug
       const page = await $content('articles', slug).fetch()
       return {
         page
       }
     },
-
   }
 
 </script>
@@ -130,7 +126,6 @@
   .container {
     margin: 0 auto;
     padding: 10px;
-    min-height: 100vh;
     max-width: 100vw;
     text-decoration: none;
     position: relative;
@@ -143,34 +138,27 @@
       .nuxt-content {
         width: 100%;
 
-      }
-
-
-
-      .nuxt-content {
-        width: 100%;
-
         h1 {
-          color: $orange;
+          color: $green;
           margin-bottom: 32px;
           font-size: 45px;
         }
 
         h2 {
-          color: $orange;
+          color: $green;
           margin: 40px 0 25px 0;
           font-size: 30px;
         }
 
         h3 {
-          color: $orange;
+          color: $green;
           margin: 30px 0 15px 0;
           font-size: 20px;
 
         }
 
         h4 {
-          color: $orange;
+          color: $green;
           margin: 30px 0 15px 0;
 
         }
@@ -181,7 +169,7 @@
         }
 
         code {
-          color: $orange;
+          color: $green;
           font-family: 'DM Mono', monospace;
         }
 
@@ -200,14 +188,14 @@
         img {
           margin: 30px 0;
           padding: 10px;
-          border: solid 1px $orange;
+          border: solid 1px $green;
           border-radius: 5px;
           background-color: #1E1E1E;
           width: 90%;
         }
 
         a {
-          color: $orange;
+          color: $green;
           transition: 0.5s;
 
           &:hover {
@@ -229,6 +217,7 @@
         margin-right: 50px;
 
         .nuxt-content {
+          width: 900px;
           img {
             width: 80%;
           }

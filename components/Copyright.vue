@@ -1,23 +1,11 @@
 <template>
-<div>
-  <p>© Copyright <a href="https://corentinperroux.fr/portfolio/" target="_blank">Corentin PERROUX </a>2020</p>
+<div class="copyright">
+ <p>© Copyright <a href="" target="_blank">{{  }}</a> {{ new Date().getFullYear() }}</p>
 </div>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-
-      }
-    },
-  }
-
-</script>
-
 <style lang="scss" scoped>
-div {
-      background: #242424;
+.copyright {
       width: 100%;
 p {
     text-align: center;
@@ -25,6 +13,6 @@ p {
     margin-top: 50px;
     letter-spacing: 0.15em;
     text-transform: initial;
-}
+  }
 }
 </style>
