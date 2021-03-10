@@ -1,14 +1,14 @@
 ---
     # MAKE TITLE OF ARTICLE
-title: BLOG-TEMPLATE 10
+title: NUXT-BLOG-TEMPLATE 10
     # MAKE DESCRIPTION OF ARTICLE
-description: Blog-template by Corentin PERROUX
+description: NUXT-BLOG-TEMPLATE by Corentin PERROUX
     # MAKE URL OF ILLUSTRATION IMAGE
 urlImage: https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-production/3075/nuxtjs-2.jpg
 
 ---
 
-# Blog-TEMPLATE by [Corentin PERROUX](https://github.com/Corentin7301/) H1
+# NUXT-BLOG-TEMPLATE by [Corentin PERROUX](https://github.com/Corentin7301/) H1
 
 ## My blog article H2
 

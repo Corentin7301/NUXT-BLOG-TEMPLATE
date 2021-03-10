@@ -1,6 +1,6 @@
 <template>
-  <div class="containerIndex">
-    <h1>PAGE ACCUEIL</h1>
+  <div class="container containerIndex">
+
   </div>
 </template>
 
@@ -9,11 +9,11 @@
     layout: "home",
 
     head: {
-      title: "BLOG-TEMPLATE",
+      title: "NUXT-BLOG-TEMPLATE",
       meta: [{
         hid: 'description',
         name: 'description',
-        content: "BLOG-TEMPLATE"
+        content: "NUXT-BLOG-TEMPLATE"
       }],
     },
   }
