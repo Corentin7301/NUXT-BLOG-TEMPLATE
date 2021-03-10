@@ -1,11 +1,11 @@
     {
         "siteUrl": "#",
-        "siteName": "BLOG-TEMPLATE",
-        "siteTitle": "BLOG-TEMPLATE",
-        "siteDescription": "Blog-template by Corentin PERROUX",
+        "siteName": "NUXT-BLOG-TEMPLATE",
+        "siteTitle": "NUXT-BLOG-TEMPLATE",
+        "siteDescription": "NUXT-BLOG-TEMPLATE by Corentin PERROUX",
         "author": "CORENTIN PERROUX",
         "copyright": "CORENTIN PERROUX",
-        "blogMetaDescription": "Blog-template by Corentin PERROUX",
+        "blogMetaDescription": "NUXT-BLOG-TEMPLATE by Corentin PERROUX",
         "twitterUrl":"https://twitter.com/CorentinPerroux",
         "twitterAccount":"@CorentinPerroux",
         "twitterCardImage":"https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-production/3075/nuxtjs-2.jpg",
@@ -13,5 +13,9 @@
             "articleCountPerPage": 9,
             "displayNumberOfArticles": false
         },
-        "siteType": "website"
+        "siteType": "website",
+        "primaryColor": "#41b883",
+        "backgroundColor": "#606f7b",
+        "whiteColor": "#eeeeee",
+        "blackColor": "#41414141"
     }
