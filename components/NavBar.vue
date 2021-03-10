@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss">
 .navbar {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     a {
       margin: 0 20px;
       font-size: 20px;

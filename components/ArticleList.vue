@@ -43,9 +43,13 @@
 
 
       .blog {
-        margin: 50px;
+        margin: 30px;
         cursor: pointer;
         width: 300px;
+        
+        &:first-child {
+          margin-top: 10px;
+        }
 
         img {
           width: 100%;
@@ -86,6 +90,10 @@
         .blog {
           margin: 50px;
           width: 500px;
+
+          &:first-child {
+            margin: 50px;
+          }
         }
       }
     }

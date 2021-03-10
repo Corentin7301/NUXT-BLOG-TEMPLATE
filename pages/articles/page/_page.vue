@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="flex justify-center">
+  <div class="containerPageArticle">
+    <div>
       <h2>
         Nombre d'articles : {{ allArticles.length }}
       </h2>
@@ -29,6 +29,18 @@
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+.containerPageArticle {
+  h2 {
+    margin-left: 10px;
+  }
+}
+  @media screen and (min-width: 1216px) {
 
+.containerPageArticle {
+  h2 {
+    margin-left: 105px;
+  }
+}
+  }
 </style>
