@@ -1,6 +1,6 @@
 <template>
   <div class="container containerIndex">
-
+    <img src="@/assets/img/nuxt-blog-template.jpg" alt="nuxt-blog-template">
   </div>
 </template>
 
@@ -22,12 +22,15 @@
 
 <style lang="scss">
   .containerIndex {
-    margin: 0 auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+
+    img {
+      width: 70%;
+      border-radius: 10px;
+    }
   }
 
   @media screen and (min-width: 1216px) {
