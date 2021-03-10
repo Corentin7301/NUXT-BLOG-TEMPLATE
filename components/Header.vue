@@ -4,6 +4,7 @@
       <nuxt-link to="/">CREATOR</nuxt-link>
     </h1>
     <h2>blog</h2>
+    <NavBar />
     <scroll-to-top>
       <svg class="w-6 h-6 top" fill="none" stroke="currentColor"
     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
