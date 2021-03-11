@@ -40,11 +40,11 @@ export default {
 
       &:hover {
         transition: 0.2s;
-        color: $green;
+        color: $primaryColor;
       }
     }
      .nuxt-link-active {
-         color: $green;
+         color: $primaryColor;
      }
 }
 </style>

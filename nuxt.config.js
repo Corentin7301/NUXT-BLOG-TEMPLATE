@@ -1,11 +1,14 @@
+import global from './blog.config.json'
+
+
 const create = async (feed) => {
   feed.options = {
-    title: 'BLOG-NAME',
+    title: global.siteUrl,
       // FOR PRODUCTION
-    link: 'https://BLOG-LINK/feed.xml',
+    link: `${global.siteUrl}/feed.xml`,
       // FOR DEV
     // link: 'http://localhost:3000/feed.xml',
-    description: 'blog-meta-description'
+    description: global.siteMetaDescription
   }
 
   const {
@@ -16,9 +19,9 @@ const create = async (feed) => {
   feed.addCategory('Nuxt.js')
 
   feed.addContributor({
-    name: 'Corentin PERROUX',
-    email: 'corentin7301@gmail.com',
-    link: 'https://BLOG-LINK'
+    name: global.author,
+    email: global.authorEmail,
+    link: global.siteUrl
   })
 
   for (const post of posts) {
@@ -27,7 +30,7 @@ const create = async (feed) => {
       title: post.title,
       slug: post.slug,
       description: post.description,
-      link: `https://BLOG-LINK/articles/${post.slug}`,
+      link: `${global.siteUrl}/articles/${post.slug}`,
       content: post.bodyText
 
     })
@@ -38,7 +41,7 @@ export default {
   // ssr: false,
   // target: 'static',
   head: {
-    title: 'BLOG-NAME',
+    title: global.siteName,
     meta: [{
         charset: 'utf-8'
       },
@@ -50,38 +53,38 @@ export default {
 
         hid: 'description',
         name: 'description',
-        content: "blog-meta-description"
+        content: global.siteMetaDescription
       },
 
 
       {
         property: "og:site_name",
-        content: "BLOG-NAME"
+        content: global.siteName
       },
       {
         hid: "og:type",
         property: "og:type",
-        content: "website"
+        content: global.siteType
       },
       {
         hid: "og:url",
         property: "og:url",
-        content: `https://BLOG-LINK`,
+        content: global.siteUrl,
       },
       {
         hid: "og:title",
         property: "og:title",
-        content: "BLOG-NAME",
+        content: global.siteName,
       },
       {
         hid: "og:description",
         property: "og:description",
-        content: "blog-meta-description",
+        content: global.siteMetaDescription,
       },
       {
         hid: "og:image",
         property: "og:image",
-        content: "https://res.cloudinary.com/corentin7301/image/upload/v1614777566/blog/img-head_odujcj.jpg",
+        content: global.mainImage,
       },
       {
         property: "og:image:width",
@@ -94,28 +97,28 @@ export default {
 
       {
         name: "twitter:site",
-        content: "TWITTER-NAME"
+        content: global.twitterAccount
       },
       // { name: "twitter:card", content: "summary_large_image" }, 
       {
         hid: "twitter:url",
         name: "twitter:url",
-        content: "https://BLOG-LINK",
+        content: global.siteUrl,
       },
       {
         hid: "twitter:title",
         name: "twitter:title",
-        content: "BLOG-NAME",
+        content: global.siteName,
       },
       {
         hid: "twitter:description",
         name: "twitter:description",
-        content: "blog-meta-description",
+        content: global.siteMetaDescription,
       },
       {
         hid: "twitter:image",
         name: "twitter:image",
-        content: "twitter-card-image",
+        content: global.twitterCardImage,
       },
 
     ],
@@ -123,16 +126,17 @@ export default {
     link: [
 
       {
-        hid: "canonical",
-        rel: "canonical",
-        href: "https://BLOG-LINK",
-      },
-
-      {
         rel: 'icon',
         type: 'image/x-icon',
+        // CHANGE FAVICON NAME HERE
         href: '/favicon.svg'
       },
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: global.siteUrl,
+      },
+
       {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'
@@ -148,7 +152,9 @@ export default {
     ]
   },
   css: ['~/assets/scss/main.scss', '~/assets/scss/colors.scss', '~/assets/scss/utility.scss', '~/assets/scss/scrollbar.scss', '~/assets/scss/transition.scss'],
-  plugins: [],
+  plugins: [
+    { src: '@/plugins/variables.js' },
+  ],
   // auto import des comp.
   components: true,
   buildModules: [
@@ -191,7 +197,7 @@ export default {
 
 
   sitemap: {
-    hostname: 'https://BLOG-LINK',
+    hostname: global.siteUrl,
     routes: async () => {
       const {
         $content
@@ -205,8 +211,9 @@ export default {
           lastmod: article.createdAt
         }
       })
+      // ADD STATIC PAGES IN SITEMAP HERE
       const staticPages = [
-        // "/contact",
+        "/contact",
         // ...
       ]
       return [...dynamicArticles, ...staticPages]
@@ -222,7 +229,7 @@ export default {
     // use: ['markdown-it-div', 'markdown-it-attrs'],
   },
 
-
+  // CHANGE DATE COUNTRY HERE
   dayjs: {
     locales: ['fr'],
     defaultLocale: 'fr',

@@ -50,6 +50,6 @@ data() {
         right: 30px;
         z-index: 99;
         cursor: pointer;
-        color: $green;
+        color: $primaryColor;
       }
 </style>

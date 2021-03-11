@@ -1,18 +1,28 @@
 <template>
   <div class="containerPageArticle">
     <div>
-      <h2>
+      <h2 v-if="this.$global.blog.displayNumberOfArticles === true">
         Nombre d'articles : {{ allArticles.length }}
       </h2>
     </div>
     <ArticleList :articles="paginatedArticles" :total="allArticles.length" />
-    
+
   </div>
 </template>
 
 <script>
   import getContent from "@/utils/getContent"
   export default {
+      head() { 
+      return {
+        title: this.$global.blogTitle,
+        meta: [{
+        hid: 'description',
+        name: 'description',
+        content: this.$global.blogMetaDescription
+      }],
+     }
+    },
     async asyncData({
       $content,
       app,

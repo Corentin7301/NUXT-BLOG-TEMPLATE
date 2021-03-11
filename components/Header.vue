@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <h1>
-      <nuxt-link to="/">CREATOR</nuxt-link>
+      <nuxt-link to="/">{{ this.$global.author }}</nuxt-link>
     </h1>
-    <h2>blog</h2>
+    <h2>{{this.$global.siteSubtitle}}</h2>
     <NavBar />
     <scroll-to-top>
       <svg class="w-6 h-6 top" fill="none" stroke="currentColor"
@@ -41,7 +41,7 @@ import ScrollToTop from './ScrollToTop.vue'
 
     h2 {
       margin: 10px 0 40px 0px;
-      color: $green;
+      color: $primaryColor;
       font-size: 11px;
       font-weight: 400;
       letter-spacing: 0.45em;

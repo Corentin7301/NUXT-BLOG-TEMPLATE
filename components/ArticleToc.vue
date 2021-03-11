@@ -32,13 +32,13 @@
         width: 250px;
       }
       .toc2 {
-        color: $green;
+        color: $primaryColor;
         margin: 7px 0 5px 0;
         transition: 0.5s;
         font-size: 12px;
 
         &:hover {
-          color: $white;
+          color: $whiteColor;
           transition: 0.3s;
         }
       }
@@ -49,7 +49,7 @@
         font-size: 10px;
 
         &:hover {
-          color: $green;
+          color: $primaryColor;
           transition: 0.3s;
         }
       }

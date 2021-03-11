@@ -14,6 +14,16 @@
 
 <script>
 export default {
+  head() { 
+      return {
+        title: "CONTACT",
+        meta: [{
+        hid: 'description',
+        name: 'description',
+        content: this.$global.contactMetaDescription
+      }],
+     }
+    },
   data() {
     return {
       name:"",
@@ -48,19 +58,19 @@ export default {
 
       input, textarea {
         background: none;
-        color: $white;
-        border: solid 1px $green;
+        color: $whiteColor;
+        border: solid 1px $primaryColor;
         border-radius: 5px;
         padding: 7px;
         width: 300px;
         margin-bottom: 20px;
 
         &::placeholder {
-          color: $white;
+          color: $whiteColor;
         }
 
         &:focus {
-          border: solid 1px $green;
+          border: solid 1px $primaryColor;
         }
       }
       textarea {

@@ -45,11 +45,11 @@
     i {
       font-size: 20px;
       margin: 0 2px 15px 2px;
-      color: $green;
+      color: $primaryColor;
       transition: 0.3s;
 
       &:hover {
-      color: $white;
+      color: $whiteColor;
       transition: 0.2s;
       }
     }

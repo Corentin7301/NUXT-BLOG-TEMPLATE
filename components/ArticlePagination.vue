@@ -53,7 +53,9 @@
       },
       perPage: {
         type: Number,
-        default: 9,
+        default() {
+          return this.$global.blog.articleCountPerPage
+        },
       },
     },
     computed: {

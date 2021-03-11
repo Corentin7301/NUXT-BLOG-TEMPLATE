@@ -21,8 +21,8 @@ props: {
 button {
     padding: 10px 0;
     width: 200px;
-    background-color: $green;
-    color: $white;
+    background-color: $primaryColor;
+    color: $whiteColor;
     transition: 0.3s;
     cursor: pointer;
     border: none;
@@ -30,8 +30,8 @@ button {
 
     &:hover {
     transition: 0.2s;
-    background-color: $white;
-    color: $green;
+    background-color: $whiteColor;
+    color: $primaryColor;
     }
 }
 </style>

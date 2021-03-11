@@ -1,6 +1,6 @@
 <template>
 <div class="copyright">
- <p>© Copyright <a href="" target="_blank">{{  }}</a> {{ new Date().getFullYear() }}</p>
+ <p>© Copyright <a :href="`email:${this.$global.authorEmail}`" target="_blank">{{ this.$global.copyright }}</a> {{ new Date().getFullYear() }}</p>
 </div>
 </template>
 
@@ -14,5 +14,15 @@ p {
     letter-spacing: 0.15em;
     text-transform: initial;
   }
+
+a {
+  color: $primaryColor;
+  transition: 0.2s;
+
+  &:hover {
+    color: $whiteColor;
+    transition: 0.3s;
+  }
+}
 }
 </style>

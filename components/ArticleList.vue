@@ -10,7 +10,7 @@
       </NuxtLink>
     </div>
       
-      <ArticlePagination v-if="total > 9" :total="total" />
+      <ArticlePagination v-if="total > this.$global.blog.articleCountPerPage" :total="total" />
   </div>
 </template>
 
@@ -58,7 +58,7 @@
 
         h2 {
           font-size: 35px;
-          color: $green;
+          color: $primaryColor;
           margin: 10px 0 5px 0;
         }
 

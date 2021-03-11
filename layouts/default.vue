@@ -19,10 +19,10 @@ export default {
 
 <style lang="scss" scoped>
   #layout {
-    background-color: $gray;
+    // background-color: $backgroundColor;
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 1.5px;
-    color: $white;
+    color: $whiteColor;
     text-decoration: none;
   }
 

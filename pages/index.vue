@@ -6,16 +6,17 @@
 
 <script>
   export default {
-    layout: "home",
 
-    head: {
-      title: "NUXT-BLOG-TEMPLATE",
-      meta: [{
+    head() { 
+      return {
+        title: this.$global.siteName,
+        meta: [{
         hid: 'description',
         name: 'description',
-        content: "NUXT-BLOG-TEMPLATE"
+        content: this.$global.siteMetaDescription
       }],
-    },
+     }
+    }
   }
 
 </script>
