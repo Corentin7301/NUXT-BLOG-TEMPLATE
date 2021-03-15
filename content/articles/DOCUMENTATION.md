@@ -249,7 +249,40 @@ Pour utiliser Nuxt Cloudinary :
 
 *******
 
-NETLIFY FORM
+## NETLIFY | PRODUCTION
+
+### Netlify configuration
+
+Pour déployer le site via Netlify (si vous n'avez pas utilisé le bouton "Deploy to Netlify") :
+
+* Créer un compte sur le site [https://app.netlify.com/](https://app.netlify.com/).
+* Ajouter le site avec le bouton "New site from Git".
+* Choisir le service d'hébergement du projet.
+* Choisir le repository.
+* Dans **Build commande**, entrer "**npm run build && nuxt generate**".
+* Appuyer sur le boutton "Deploy site".
+* Cliquer sur le bouton "Domain settings".
+* Cliquer sur le bouton "Options", "Edit site name" et choisir un nom de domaine. Pour ajouter un nom de domaine personnalisé cliquer sur "Add custom domain".
+
+### Netlify environnement
+
+Si il y a des entrées dans le fichier ".env" du projet, elles devront être recopiées dans Netlify.
+
+* Cliquer sur "Site settings", "Build & deploy" puis "Environment".
+* Cliquer sur "Edit variables" puis ajouter toutes les variables d'environnement figurant dans le fichier ".env" du projet.
+
+
+### Netlify formulaires
+
+Le blog est compatible avec les formulaires NETLIFY.
+
+* Dans Netlify, cliquer sur l'onglet "Forms".
+* Dans "Active forms" il y a une entrée "contact". C'est ici que seront stockées toutes les entrées du formulaire de la page "contact".
+* Pour être notifié à chaque nouvelle entrée, cliquer sur le bouton "Settings and usage".
+* Cliquer sur l'onglet "Form notifications" puis sur "Add notifications".
+
+**A chaque entrée, vous serez notifié par mail, webhook ou Slack.**
+
 
 ***********
 ## English :
