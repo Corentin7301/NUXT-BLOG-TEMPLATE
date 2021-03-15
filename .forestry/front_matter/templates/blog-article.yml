@@ -1,0 +1,13 @@
+---
+label: Blog article
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: file
+  name: urlImage
+  label: urlImage
