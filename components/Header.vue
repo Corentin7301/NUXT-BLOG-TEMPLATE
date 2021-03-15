@@ -1,9 +1,9 @@
 <template>
-  <div class="header">
-    <h1>
+  <div class=" flex flex-col items-center justify-center uppercase">
+    <h1 class=" mt-5 text-center text-xl tracking-widest lg:mt-10 lg:mb-4">
       <nuxt-link to="/">{{ this.$global.author }}</nuxt-link>
     </h1>
-    <h2>{{this.$global.siteSubtitle}}</h2>
+    <h2 class=" mt-3 mb-10 text-xs font-normal lg:mt-0 lg:mb-16">{{this.$global.siteSubtitle}}</h2>
     <NavBar />
     <scroll-to-top>
       <svg class="w-6 h-6 top" fill="none" stroke="currentColor"
@@ -23,45 +23,3 @@ import ScrollToTop from './ScrollToTop.vue'
   }
 
 </script>
-
-<style lang="scss" scoped>
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-
-    h1 {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 20px;
-      letter-spacing: 0.25em;
-    }
-
-    h2 {
-      margin: 10px 0 40px 0px;
-      color: $primaryColor;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.45em;
-    }
-
-  }
-
-  // DESKTOP
-  @media screen and (min-width: 1216px) {
-    .header {
-
-      h1 {
-        margin: 40px 0 15px 0px;
-      }
-
-      h2 {
-        margin: 0 0 60px 0px;
-      }
-
-    }
-  }
-
-</style>

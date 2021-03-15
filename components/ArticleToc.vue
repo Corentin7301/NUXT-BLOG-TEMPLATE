@@ -1,6 +1,6 @@
 <template>
-  <div class="menu">
-      <p v-for="link in toc" :key="link.id" :class="{ 'toc2': link.depth === 2, 'toc3': link.depth === 3 }">
+  <div class=" hidden lg:block lg:ml-10">
+      <p v-for="link in toc" :key="link.id" :class="{ 'toc2': link.depth === 2, 'toc3': link.depth === 3 }" class=" w-64">
         <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
       </p>
   </div>
@@ -18,42 +18,21 @@
 
 </script>
 
-<style lang="scss">
-  .menu {
-    display: none;
-  }
-
-      @media screen and (min-width: 1216px) {
-    .menu {
-      display: block;
-      margin-left: 40px;
-      
-      p {
-        width: 250px;
-      }
+<style>
       .toc2 {
-        color: $primaryColor;
-        margin: 7px 0 5px 0;
-        transition: 0.5s;
-        font-size: 12px;
+        @apply text-primaryColor mt-2 mb-1 transition-all text-sm 
+      }
 
-        &:hover {
-          color: $whiteColor;
-          transition: 0.3s;
-        }
+      .toc2:hover {
+        @apply text-whiteColor
       }
 
       .toc3 {
-        margin: 5px 0 5px 15px;
-        transition: 0.5s;
-        font-size: 10px;
-
-        &:hover {
-          color: $primaryColor;
-          transition: 0.3s;
-        }
+        @apply mt-1 mb-1 ml-4 transition-all text-xs
       }
-    }
-  }
+      
+      .toc3:hover {
+       @apply text-primaryColor
+      }
 
 </style>

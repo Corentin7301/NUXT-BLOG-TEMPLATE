@@ -27,7 +27,7 @@ data() {
         if (this.scrollY < this.hideFrom) {
           return "hidden"
         } else {
-          return "fixed"
+          return "fixedElement"
         }
 
       }
@@ -42,14 +42,7 @@ data() {
 </script>
 
 <style lang="scss" scoped>
-      .fixed {
-        position: fixed;
-        width: 25px;
-        height: 25px;
-        bottom: 50px;
-        right: 30px;
-        z-index: 99;
-        cursor: pointer;
-        color: $primaryColor;
+      .fixedElement {
+        @apply fixed w-6 h-6 bottom-12 right-8 z-50 cursor-pointer text-primaryColor
       }
 </style>

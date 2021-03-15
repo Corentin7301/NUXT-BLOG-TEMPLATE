@@ -151,14 +151,15 @@ export default {
       }
     ]
   },
-  css: ['~/assets/scss/main.scss', '~/assets/scss/colors.scss', '~/assets/scss/utility.scss', '~/assets/scss/scrollbar.scss', '~/assets/scss/transition.scss'],
+  css: ['~/assets/css/main.css', '~/assets/css/colors.css', '~/assets/css/utility.css', '~/assets/css/scrollbar.css', '~/assets/css/transition.css', '~/assets/css/tailwind.css'],
   plugins: [
     { src: '@/plugins/variables.js' },
   ],
   // auto import des comp.
   components: true,
   buildModules: [
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/tailwindcss',
   ],
 
   googleAnalytics: {
@@ -172,7 +173,6 @@ export default {
 
 
   modules: [
-    '@nuxtjs/style-resources',
     '@nuxt/content',
     '@nuxtjs/dayjs',
     '@nuxtjs/cloudinary',
@@ -246,7 +246,8 @@ export default {
     // Options
   },
   styleResources: {
-    scss: ['~/assets/scss/*.scss']
+    // scss: ['~/assets/scss/*.scss'],
+    css: ['~assets/css/*.css']
   },
   build: {},
   generate: {},

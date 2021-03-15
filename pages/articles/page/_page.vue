@@ -1,7 +1,7 @@
 <template>
   <div class="containerPageArticle">
     <div>
-      <h2 v-if="this.$global.blog.displayNumberOfArticles === true">
+      <h2 v-if="this.$global.blog.displayNumberOfArticles === true" class=" ml-2.5 lg:ml-28">
         Nombre d'articles : {{ allArticles.length }}
       </h2>
     </div>
@@ -38,19 +38,3 @@
   }
 
 </script>
-
-<style lang="scss" scoped>
-.containerPageArticle {
-  h2 {
-    margin-left: 10px;
-  }
-}
-  @media screen and (min-width: 1216px) {
-
-.containerPageArticle {
-  h2 {
-    margin-left: 105px;
-  }
-}
-  }
-</style>

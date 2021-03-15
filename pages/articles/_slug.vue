@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <social-share :page="page" />
-    <div class="content">
-      <nuxt-content :document="page" class="nuxt-content" />
+    <div class="flex lg:w-full mr-12">
+      <nuxt-content :document="page" class="nuxt-content w-full" />
       <ArticleToc :toc="page.toc" />
     </div>
-    <social-share :page="page" class="social-share-bottom"/>
+    <social-share :page="page" class=" lg:hidden" />
   </div>
 </template>
 
@@ -111,7 +111,10 @@
       }
     },
 
-    async asyncData({ $content, params }) {
+    async asyncData({
+      $content,
+      params
+    }) {
       const slug = params.slug
       const page = await $content('articles', slug).fetch()
       return {
@@ -122,111 +125,47 @@
 
 </script>
 
-<style lang="scss">
-  .container {
-    margin: 0 auto;
-    padding: 10px;
-    max-width: 100vw;
-    text-decoration: none;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+<style>
 
-    .content {
-      display: flex;
 
-      .nuxt-content {
-        width: 100%;
-
-        h1 {
-          color: $primaryColor;
-          margin-bottom: 32px;
-          font-size: 45px;
-        }
-
-        h2 {
-          color: $primaryColor;
-          margin: 40px 0 25px 0;
-          font-size: 30px;
-        }
-
-        h3 {
-          color: $primaryColor;
-          margin: 30px 0 15px 0;
-          font-size: 20px;
-
-        }
-
-        h4 {
-          color: $primaryColor;
-          margin: 30px 0 15px 0;
-
-        }
-
-        p {
-          margin: 15px 0;
-          line-height: 28px;
-        }
-
-        code {
-          color: $primaryColor;
-          font-family: 'DM Mono', monospace;
-        }
-
-        pre {
-          padding-left: 30px;
-          background-color: #ebebeb;
-          border-radius: 5px;
-          margin: 15px 0;
-
-          code {
-            line-height: 15px;
-            font-family: 'DM Mono', monospace;
-          }
-        }
-
-        img {
-          margin: 30px 0;
-          padding: 10px;
-          border: solid 1px $primaryColor;
-          border-radius: 5px;
-          background-color: #1E1E1E;
-          width: 90%;
-        }
-
-        a {
-          color: $primaryColor;
-          transition: 0.5s;
-
-          &:hover {
-            color: $whiteColor;
-            transition: 0.3s;
-          }
-        }
-      }
-    }
+  .nuxt-content h1 {
+    @apply text-primaryColor mb-8 text-5xl
   }
 
-  @media screen and (min-width: 1216px) {
-    .container {
-      display: flex;
-      padding: 0;
+  .nuxt-content h2 {
+    @apply text-primaryColor mt-10 mb-6 text-3xl
+  }
 
-      .content {
-        width: 75%;
-        margin-right: 50px;
+  .nuxt-content h3 {
+    @apply text-primaryColor mt-8 mb-4 text-xl
+  }
 
-        .nuxt-content {
-          width: 900px;
-          img {
-            width: 80%;
-          }
-        }
-      }
-      .social-share-bottom {
-        display: none;
-      }
-    }
+  .nuxt-content h4 {
+    @apply text-primaryColor mt-8 mb-4
+  }
+
+  .nuxt-content p {
+    @apply my-4 leading-7 font-normal
+  }
+
+  .nuxt-content code {
+    @apply text-primaryColor font-dmMono
+  }
+
+  .nuxt-content pre {
+    @apply text-whiteColor pl-8 my-4 rounded-md
+  }
+
+  .nuxt-content img {
+    @apply bg-backgroundColor my-8 p-3 border-primaryColor rounded-md w-11/12 lg:w-4/5
+  }
+
+  .nuxt-content a {
+    @apply text-primaryColor transition-all
+  }
+
+  .nuxt-content a:hover {
+    @apply text-whiteColor
   }
 
 </style>

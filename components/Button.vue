@@ -1,5 +1,5 @@
 <template>
-  <button :type="type"><slot/></button>
+  <button :type="type" class=" py-2.5 w-52 bg-primaryColor text-whiteColor transition-all cursor-pointer border-none rounded-md hover:bg-whiteColor hover:text-primaryColor"><slot/></button>
 </template>
 
 <script>
@@ -16,22 +16,3 @@ props: {
 },
 }
 </script>
-
-<style lang="scss" scoped>
-button {
-    padding: 10px 0;
-    width: 200px;
-    background-color: $primaryColor;
-    color: $whiteColor;
-    transition: 0.3s;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-
-    &:hover {
-    transition: 0.2s;
-    background-color: $whiteColor;
-    color: $primaryColor;
-    }
-}
-</style>

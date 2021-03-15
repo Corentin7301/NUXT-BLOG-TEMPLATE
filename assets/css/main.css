@@ -3,8 +3,8 @@ html {
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  // -moz-osx-font-smoothing: grayscale;
-  // -webkit-font-smoothing: antialiased;
+   /* -moz-osx-font-smoothing: grayscale; */
+   /* -webkit-font-smoothing: antialiased; */
   box-sizing: border-box;
   scroll-behavior: smooth;
   list-style-type: none;
@@ -20,19 +20,19 @@ html {
 }
 
 
-a {
-  text-decoration: inherit;
-  color: inherit;
-}
+ /* a {
+   text-decoration: inherit;
+   color: inherit;
+ } */
 
 body {
-  margin: 0;
-  background-color: $backgroundColor;
+   /* margin: 0; */
+  background-color: #606f7b;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
+ /* *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+   margin: 0;
+ } */

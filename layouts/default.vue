@@ -1,5 +1,5 @@
 <template>
-  <div id="layout">
+  <div id="layout" class="font-quicksand font-medium tracking-widest no-underline text-whiteColor">
     <Header />
     <Nuxt />
     <Footer />
@@ -16,14 +16,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-  #layout {
-    // background-color: $backgroundColor;
-    font-family: 'Quicksand', sans-serif;
-    letter-spacing: 1.5px;
-    color: $whiteColor;
-    text-decoration: none;
-  }
-
-</style>

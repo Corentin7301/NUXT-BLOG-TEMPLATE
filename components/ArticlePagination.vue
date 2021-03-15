@@ -1,30 +1,30 @@
 <template>
-  <div class="pagination">
+  <div class=" flex justify-end mr-5 mb-3">
 
-    <pre class="numberPage">Page {{currentPage}}/{{ totalPages }}</pre>
+    <pre class=" mx-0.5 mr-4">Page {{currentPage}}/{{ totalPages }}</pre>
 
 
 
-    <div v-if="currentPage === 1" class="forbidden">
-      <i class="fas fa-chevron-left"></i>
+    <div v-if="currentPage === 1" class=" cursor-not-allowed">
+      <i class="fas fa-chevron-left mx-2.5"></i>
     </div>
 
     <nuxt-link v-else :to="{ name: 'articles-page-page', params: { page: prevPage } }">
-      <i class="fas fa-chevron-left"></i>
+      <i class="fas fa-chevron-left mx-2.5"></i>
     </nuxt-link>
 
 
-    <div v-if="currentPage === 1" class="forbidden">
-      <pre>1</pre>
+    <div v-if="currentPage === 1" class="cursor-not-allowed">
+      <pre class="mx-0.5">1</pre>
     </div>
 
     <nuxt-link v-else :to="{ name: 'articles-page-page', params: { page: 1 } }">
-      <pre>1</pre>
+      <pre class="mx-0.5">1</pre>
     </nuxt-link>
 
-    <pre>...</pre>
+    <pre class="mx-0.5">...</pre>
 
-    <div v-if="currentPage === totalPages" class="forbidden">
+    <div v-if="currentPage === totalPages" class="cursor-not-allowed">
       {{ totalPages }}
     </div>
 
@@ -32,12 +32,12 @@
       {{ totalPages }}
     </nuxt-link>
 
-    <div v-if="currentPage === totalPages" class="forbidden">
-      <i class="fas fa-chevron-right"></i>
+    <div v-if="currentPage === totalPages" class="cursor-not-allowed">
+      <i class="fas fa-chevron-right mx-2.5"></i>
     </div>
 
     <nuxt-link v-else :to="{ name: 'articles-page-page', params: { page: nextPage } }">
-      <i class="fas fa-chevron-right"></i>
+      <i class="fas fa-chevron-right mx-2.5"></i>
     </nuxt-link>
 
 
@@ -78,27 +78,3 @@
 
 </script>
 
-<style lang="scss">
-  .pagination {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 20px 10px 0;
-
-    pre {
-      margin: 0 2px;
-    }
-
-    .numberPage {
-      margin-right: 15px;
-    }
-
-    i {
-      margin: 0 10px;
-    }
-
-    .forbidden {
-      cursor: not-allowed;
-    }
-  }
-
-</style>
