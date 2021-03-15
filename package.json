@@ -8,7 +8,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "serve": "nuxt serve",
-    "production": "npm run build && nuxt generate"
+    "production": "npm run build && nuxt generate",
+    "preview": "nuxt -p 8080"
   },
   "dependencies": {
     "@nuxt/content": "^1.13.1",
