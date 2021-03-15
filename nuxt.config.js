@@ -103,7 +103,7 @@ export default {
       {
         hid: "twitter:url",
         name: "twitter:url",
-        content: global.siteUrl,
+        content: global.twitterUrl,
       },
       {
         hid: "twitter:title",

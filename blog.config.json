@@ -1,8 +1,7 @@
     {
         "siteUrl": "https://blog.corentinperroux.fr",
         "siteName": "NUXT-BLOG-TEMPLATE",
-        "siteTitle": "NUXT-BLOG-TEMPLATE",
-        "siteSubtitle": "NUXT-BLOG-TEMPLATE",
+        "siteSubname": "NUXT-BLOG-TEMPLATE",
         "blogTitle": "BLOG of NUXT-BLOG-TEMPLATE",
         "contactTitle": "CONTACT PAGE of NUXT-BLOG-TEMPLATE",
         "author": "CORENTIN PERROUX",
@@ -13,7 +12,7 @@
         "contactMetaDescription": "CONTACT PAGE of NUXT-BLOG-TEMPLATE by Corentin PERROUX",
         "twitterUrl":"https://twitter.com/CorentinPerroux",
         "twitterAccount":"@CorentinPerroux",
-        "twitterCardImage":"https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-production/3075/nuxtjs-2.jpg",
+        "twitterCardImage":"https://res.cloudinary.com/corentin7301/image/upload/v1615799454/blog-template/nuxt-blog-template_i25n41.jpg",
         "mainImage":"https://res.cloudinary.com/corentin7301/image/upload/v1615799454/blog-template/nuxt-blog-template_i25n41.jpg",
         "siteType": "website",
         "blog": {
@@ -24,6 +23,7 @@
             "colors": {
                 "primaryColor": "#41b883",
                 "backgroundColor": "#606f7b",
+                "footerBackgroundColor": "#41414141",
                 "whiteColor": "#eeeeee",
                 "blackColor": "#41414141"
             }

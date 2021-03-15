@@ -23,7 +23,7 @@
   export default {
     head() {
       return {
-        title: "CONTACT",
+        title: this.$global.contactTitle,
         meta: [{
           hid: 'description',
           name: 'description',
@@ -44,7 +44,7 @@
 
 <style scoped>
   .inputsContact {
-    @apply p-2 w-72 mb-5 rounded-md text-whiteColor border-solid border-2 border-primaryColor
+    @apply p-2 w-72 mb-5 rounded-md text-primaryColor border-solid border-2 border-primaryColor
   }
 
   .inputsContact:focus {
