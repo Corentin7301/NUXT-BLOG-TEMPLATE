@@ -1,7 +1,7 @@
 <template>
   <div class=" flex flex-col items-center justify-center uppercase">
     <h1 class=" mt-5 text-center text-xl tracking-widest  lg:mt-10 lg:mb-4">
-      <nuxt-link to="/" class=" transition-all hover:text-whiteColor">{{ this.$global.author }}</nuxt-link>
+      <nuxt-link to="/" class=" transition-all hover:text-lightColor">{{ this.$global.author }}</nuxt-link>
     </h1>
     <h2 class=" mt-3 mb-10 text-xs font-normal lg:mt-0 lg:mb-16">{{this.$global.siteSubname}}</h2>
     <NavBar />

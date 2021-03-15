@@ -17,8 +17,8 @@ module.exports = {
       colors: {
         backgroundColor: global.style.colors.backgroundColor,
         footerBackgroundColor: global.style.colors.footerBackgroundColor,
-        whiteColor: global.style.colors.whiteColor,
-        blackColor: global.style.colors.blackColor,
+        lightColor: global.style.colors.lightColor,
+        darkColor: global.style.colors.darkColor,
         primaryColor: global.style.colors.primaryColor,
       },
       outline: theme => ( {

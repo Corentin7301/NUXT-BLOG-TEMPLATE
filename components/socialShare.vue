@@ -43,7 +43,7 @@
   }
 
   .socialShare:hover {
-    @apply text-whiteColor
+    @apply text-lightColor
   }
 
 </style>

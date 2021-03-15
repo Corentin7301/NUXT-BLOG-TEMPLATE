@@ -24,8 +24,8 @@
                 "primaryColor": "#41b883",
                 "backgroundColor": "#606f7b",
                 "footerBackgroundColor": "#41414141",
-                "whiteColor": "#eeeeee",
-                "blackColor": "#41414141"
+                "lightColor": "#eeeeee",
+                "darkColor": "#41414141"
             }
         }
     }

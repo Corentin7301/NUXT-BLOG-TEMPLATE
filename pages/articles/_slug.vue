@@ -153,7 +153,7 @@
   }
 
   .nuxt-content pre {
-    @apply text-whiteColor pl-8 my-4 rounded-md
+    @apply text-lightColor pl-8 my-4 rounded-md
   }
 
   .nuxt-content img {
@@ -165,7 +165,7 @@
   }
 
   .nuxt-content a:hover {
-    @apply text-whiteColor
+    @apply text-lightColor
   }
 
 </style>

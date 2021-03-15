@@ -24,7 +24,7 @@
       }
 
       .toc2:hover {
-        @apply text-whiteColor
+        @apply text-lightColor
       }
 
       .toc3 {

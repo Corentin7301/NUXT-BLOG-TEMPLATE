@@ -1,5 +1,5 @@
 <template>
-  <div id="layout" class="font-quicksand font-medium tracking-widest no-underline text-whiteColor">
+  <div id="layout" class="font-quicksand font-medium tracking-widest no-underline text-lightColor">
     <Header />
     <Nuxt />
     <Footer />
