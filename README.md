@@ -10,10 +10,8 @@ urlImage: https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-p
 
 # NUXT BLOG TEMPLATE
 
-*********
 ## Made by [Corentin PERROUX](https://github.com/Corentin7301)
 
-*********
 ## DEPLOY ON NETLIFY :
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Corentin7301/NUXT-BLOG-TEMPLATE"><img src="https://camo.githubusercontent.com/417d890ba67c98ad5856b715343a61cdbf07d72b9bd5b79dd45d43de634c29ea/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f6465706c6f792f627574746f6e2e737667" alt="netlify deploy button"></a>
@@ -22,15 +20,13 @@ urlImage: https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-p
 
 If the created repository is empty use the "Use this template" button of Github.
 
-*********
 ## REPO-NAME: https://github.com/Corentin7301/NUXT-BLOG-TEMPLATE
 
 *********
 ## Français :
 
-*********
 
-Installation de node et des dépendances : ```npm i```
+**Installation de node et des dépendances : ```npm i```**
 
 ## Personnalisation
 
@@ -120,11 +116,12 @@ Il est utilisé dans la **page _page.vue**.
 
 * #### **style.colors.footerBackgroundColor** : Couleur de fond du footer du site. EN HEXADECIMAL Exemple : #41414141.
 
-* #### **style.colors.whiteColor** : Couleur "blanche" du site. EN HEXADECIMAL Exemple : #eeeeee.
+* #### **style.colors.lightColor** : Couleur claire du site. EN HEXADECIMAL Exemple : #eeeeee.
 
-* #### **style.colors.blackColor** : Couleur "noire" du site. EN HEXADECIMAL Exemple : #41414141.
+* #### **style.colors.darkColor** : Couleur sombre du site. EN HEXADECIMAL Exemple : #41414141.
 
-********
+
+##Contenu :
 
 ## Ecrire un article :
 
@@ -155,7 +152,7 @@ Il est utilisé dans la **page _page.vue**.
   * Modifier et ajouter des articles dans l'onglet "Articles" du la sidebar.
 
 
-********
+## Variables d'environnement
 
 Modifier les **variables d'environnement** dans **exemple.env** (**RENOMMER LE FICHIER EN ".env"**) :
 
@@ -171,7 +168,6 @@ API_KEY=----------
 API_SECRET=--------
 
 
-*********
 
 ## Favicon
 
@@ -220,8 +216,6 @@ Pour utiliser Nuxt Cloudinary :
 [Nuxt Cloudinary documentation](https://cloudinary.nuxtjs.org/)
 
 
-********
-
 ## Dépendances installées :
 
 * **nuxt**
@@ -235,7 +229,6 @@ Pour utiliser Nuxt Cloudinary :
 * **@nuxtjs/google-analytics**
 * **@nuxtjs/tailwindcss**
 
-********
 
 ## Scripts :
 
@@ -247,9 +240,41 @@ Pour utiliser Nuxt Cloudinary :
 * **production**: "npm run build && nuxt generate",
 * **preview**: "nuxt -p 8080"
 
-*******
 
-NETLIFY FORM
+## NETLIFY | PRODUCTION
+
+### Netlify configuration
+
+Pour déployer le site via Netlify (si vous n'avez pas utilisé le bouton "Deploy to Netlify") :
+
+* Créer un compte sur le site [https://app.netlify.com/](https://app.netlify.com/).
+* Ajouter le site avec le bouton "New site from Git".
+* Choisir le service d'hébergement du projet.
+* Choisir le repository.
+* Dans **Build commande**, entrer "**npm run build && nuxt generate**".
+* Appuyer sur le boutton "Deploy site".
+* Cliquer sur le bouton "Domain settings".
+* Cliquer sur le bouton "Options", "Edit site name" et choisir un nom de domaine. Pour ajouter un nom de domaine personnalisé cliquer sur "Add custom domain".
+
+### Netlify environnement
+
+Si il y a des entrées dans le fichier ".env" du projet, elles devront être recopiées dans Netlify.
+
+* Cliquer sur "Site settings", "Build & deploy" puis "Environment".
+* Cliquer sur "Edit variables" puis ajouter toutes les variables d'environnement figurant dans le fichier ".env" du projet.
+
+
+### Netlify formulaires
+
+Le blog est compatible avec les formulaires NETLIFY.
+
+* Dans Netlify, cliquer sur l'onglet "Forms".
+* Dans "Active forms" il y a une entrée "contact". C'est ici que seront stockées toutes les entrées du formulaire de la page "contact".
+* Pour être notifié à chaque nouvelle entrée, cliquer sur le bouton "Settings and usage".
+* Cliquer sur l'onglet "Form notifications" puis sur "Add notifications".
+
+**A chaque entrée, vous serez notifié par mail, webhook ou Slack.**
+
 
 ***********
 ## English :
