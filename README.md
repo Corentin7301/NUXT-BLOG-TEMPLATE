@@ -175,26 +175,26 @@ Remplacer le favicon dans le dossier **/static**.
 
 Modifier le nom du favicon (si besoin) dans le fichier **/nuxt.config.js** à la **ligne 132**.
 
-*********
+
 ## Sitemap : 
 
 ### Disponible à l'adresse : **/sitemap.xml**
 
 Ajouter les pages statiques (index, contact,...) dans le fichier  **/nuxt.config.js** à la **ligne 216**.
 
-********
+
 ## Feed RSS : 
 
 ### Disponible à l'adresse : **/feed.xml**
 
-********
+
 
 ## Dayjs : 
 
 Modifier la date du pays dans le fichier  **/nuxt.config.js** aux **lignes 234, 235**.
 
 
-********
+
 
 ## Nuxt Cloudinary : 
 
