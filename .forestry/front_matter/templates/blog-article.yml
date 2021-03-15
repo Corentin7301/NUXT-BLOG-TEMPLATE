@@ -5,9 +5,13 @@ fields:
 - type: text
   name: title
   label: title
+  description: 'C''est le titre qui sera dans l''url.<br>Pas d''espaces, pas de signes
+    bizarres...<br>Exemple : titre-de-mon-article'
 - type: text
   name: description
   label: description
+  description: Description pour le SEO.
 - type: file
   name: urlImage
   label: urlImage
+  description: Url de l'image d'illustration de l'article.
