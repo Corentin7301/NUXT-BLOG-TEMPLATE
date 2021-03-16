@@ -7,10 +7,14 @@ fields:
   label: title
   description: 'C''est le titre qui sera dans l''url.<br>Pas d''espaces, pas de signes
     bizarres...<br>Exemple : titre-de-mon-article'
+  config:
+    required: true
 - type: text
   name: description
   label: description
   description: Description pour le SEO.
+  config:
+    required: true
 - name: urlImage
   type: text
   config:
