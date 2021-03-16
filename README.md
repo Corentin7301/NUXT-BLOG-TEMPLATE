@@ -121,7 +121,7 @@ Il est utilisé dans la **page _page.vue**.
 * #### **style.colors.darkColor** : Couleur sombre du site. EN HEXADECIMAL Exemple : #41414141.
 
 
-##Contenu :
+## Contenu :
 
 ## Ecrire un article :
 
@@ -151,6 +151,10 @@ Il est utilisé dans la **page _page.vue**.
   * Choisir le repository.
   * Modifier et ajouter des articles dans l'onglet "Articles" du la sidebar.
 
+
+## Table des matières | Toc
+
+La table des matière fonctionne avec les h2 et les h3 des articles. Elle fonctionne avec un système d'ancre HTML.
 
 ## Variables d'environnement
 
@@ -278,5 +282,254 @@ Le blog est compatible avec les formulaires NETLIFY.
 
 ***********
 ## English :
-***********
 Install node and dependencies : ```npm i```
+
+## Customization
+
+Change site datas in **/blog.config.json** file.
+
+* #### **siteUrl** : Domain name of site. Example : "https://blog-template.fr"
+
+It will appear in the **feed configuration**, **site metadatas**, **canonical url** and the **sitemap configuration**.
+
+* #### **siteName** : Site name. Example : "NUXT-BLOG-TEMPLATE"
+
+It will appear in the **Site and index metadatas** and the **alt tag of page "contact" image**.
+
+* #### **siteTitle** : Site subtitle. Example : "NUXT-BLOG-TEMPLATE"
+
+It will appear in the **header h2**.
+
+* #### **blogTitle** : Blog page name. Example : "BLOG of NUXT-BLOG-TEMPLATE"
+
+It will appear in the **blog page metadatas (_page.vue)**.
+
+* #### **contactTitle** : Blog page name. Example : "CONTACT of NUXT-BLOG-TEMPLATE"
+
+It will appear in the **contact page metadatas (_page.vue)**.
+
+* #### **author** : Author name. Example : "CORENTIN PERROUX"
+
+It will appear in the **contact page metadatas** and in the **header h1**.
+
+* #### **authorEmail** : Author email. Example : "corentin7301@gmail.com"
+
+It will appear in the **feed** and in the **copyright link**.
+
+* #### **copyright** : Copyright. Example : "CORENTIN PERROUX"
+
+It will appear in the **copyright**.
+
+* #### **siteMetaDescription** : Site meta-description. Example : "NUXT-BLOG-TEMPLATE by Corentin PERROUX"
+
+It will appear in the **site metadatas** and the **index page**.
+
+
+* #### **blogMetaDescription** : Blog page meta-description. Example : "BLOG of NUXT-BLOG-TEMPLATE by Corentin PERROUX"
+
+It will appear in **blog page (_page.vue)**.
+
+
+* #### **contactMetaDescription** : Contact page meta-description. Example : "CONTACT of NUXT-BLOG-TEMPLATE by Corentin PERROUX"
+
+It will appear in **contact page**.
+
+* #### **twitterUrl** : Twitter account url. Example : "https://twitter.com/CorentinPerroux"
+
+It will appear in the **twitter social card configuration**.
+
+
+* #### **twitterAccount** : Twitter account name. Example : "@CorentinPerroux"
+
+It will appear in the **twitter social card configuration**.
+
+* #### **twitterCardImage** : Twitter card image. Example : "https://res.cloudinary.com/corentin7301/image/upload/v1615799454/blog-template/nuxt-blog-template_i25n41.jpg"
+
+It will appear in the **twitter social card configuration**.
+
+* #### **mainImage** : Site main image. Example : "https://res.cloudinary.com/corentin7301/image/upload/v1615799454/blog-template/nuxt-blog-template_i25n41.jpg"
+
+It will appear in the **social share cards configuration**, in **contact page** and in **index page**.
+
+* #### **siteType** : Site type. Example : "website"
+
+**If you don't know him, let "website".**
+
+It will appear in the **social share cards configuration**.
+
+
+* #### **blog.articleCountPerPage** : Number of article Number of articles on each page in the blog tab (_page.vue). Example : "9"
+
+It will appear in the **ArticleList.vue page**, **ArticlePagination.vue** and in **getContent.js**.
+
+* #### **blog.displayNumberOfArticles** : Display of the total number of articles in the blog tab (_page.vue). true = Display | false = Do NOT display.
+
+It will appear in the **_page.vue page**.
+
+* #### **style.colors.primaryColor** : Main site color. EN HEXADECIMAL Example : #41b883.
+
+* #### **style.colors.backgroundColor** : Background site color. EN HEXADECIMAL Example : #606f7b.
+
+* #### **style.colors.footerBackgroundColor** : Background site footer color. EN HEXADECIMAL Example : #41414141.
+
+* #### **style.colors.lightColor** : Light site color. EN HEXADECIMAL Example : #eeeeee.
+
+* #### **style.colors.darkColor** : Dark site color. EN HEXADECIMAL Example : #41414141.
+
+
+## Content :
+
+## Write an article :
+
+* ### With .md files :
+
+  * Write according to [Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+  * Start with a frontmatter including :
+
+
+    * **title**: Article name. Example : NUXT-BLOG-TEMPLATE 1
+
+    * **description**: Article description. Example : NUXT-BLOG-TEMPLATE by Corentin PERROUX
+
+    * **urlImage** : Url of the illustration image of the article. Example : https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-production/3075/nuxtjs-2.jpg
+
+  It's possible to have an example in 1 - 12 Example files.
+
+  * Delete 1 - 12 Example files.
+
+* ### With Forestry.io :
+
+  * Create an account on [Forestry.io](https://forestry.io/) website.
+  * Click on "Add site".
+  * Click on "Other".
+  * Choose the hosting service for the project.
+  * Choose the repository.
+  * Edit and add articles in "Articles" tab of the sidebar.
+
+
+## Table of Contents | Toc
+
+The Table of Contents works with articles h2 and h3. It works with HTML anchor system.
+
+## Environment variables
+
+Edit **environment variables** in **exemple.env** (**RENAME THE FILE TO ".env"**) :
+
+* **GOOGLE ANALYTICS** : Google Analytics environment variables (if Google Ananytics if used).
+GOOGLE_ANALYTICS_ID=UA---------
+
+* **CLOUDINARY** : Cloudinary environment variables for Nuxtjs (if Cloudinary if used for de medias gestion).
+
+CLOUD_NAME=----------
+
+API_KEY=----------
+
+API_SECRET=--------
+
+
+
+## Favicon
+
+Replace favicon in **/static** folder.
+
+Edit favicon name (if necessary) in **/nuxt.config.js** file on **line 132**.
+
+
+## Sitemap : 
+
+### Available at : **/sitemap.xml**.
+
+Add static pages (index, contact,...) in **/nuxt.config.js** file on **line 216**.
+
+
+## Feed RSS : 
+
+### Available at : **/feed.xml**.
+
+
+
+## Dayjs : 
+
+Edit country date in **/nuxt.config.js** file on **lines 234 and 235**.
+
+
+
+## Nuxt Cloudinary : 
+
+Nuxt Cloudinary enables optimized media management.
+
+For use Nuxt Cloudinary :
+
+* Create an account on [https://cloudinary.com/](https://cloudinary.com/)
+* Cpoy the **CLOUD_NAME**, the **API_KEY** and the **SECRET_KEY** in the **/.env** file.
+* Import files (images).
+* Each link looks like this : https://res.cloudinary.com/CLOUD-NAME/image/upload/TRANSFORMATIONS/VERSION/PATH-TO-IMAGE
+* We can recover link here : ![lien cloudinary](https://res.cloudinary.com/mayashavin/image/upload/f_auto,q_auto/v1603355978/nuxt-cld/copyurl)
+* To display a picture can do : 
+  ```html 
+  <cld-image public-id="PATH-TO-IMAGE" width="100%" loading="lazy"
+    fetchFormat="auto" quality="auto" alt="" responsive />
+  ```
+
+[Nuxt Cloudinary documentation](https://cloudinary.nuxtjs.org/)
+
+
+## Dependencies installed :
+
+* **nuxt**
+* **@nuxt/content**
+* **@nuxtjs/dayjs**
+* **@nuxtjs/cloudinary**
+* **@nuxtjs/feed**
+* **@nuxtjs/markdownit**
+* **vue-social-sharing/nuxt**
+* **@nuxtjs/sitemap**
+* **@nuxtjs/google-analytics**
+* **@nuxtjs/tailwindcss**
+
+
+## Scripts :
+
+* **dev**: "nuxt",
+* **build**: "nuxt build",
+* **start**: "nuxt start",
+* **generate**: "nuxt generate",
+* **serve**: "nuxt serve",
+* **production**: "npm run build && nuxt generate",
+* **preview**: "nuxt -p 8080"
+
+
+## NETLIFY | PRODUCTION
+
+### Netlify configuration
+
+Pour déployer le site via Netlify (si vous n'avez pas utilisé le bouton "Deploy to Netlify") :
+To deploy the site with Netlify (if you do not use the "Deploy on Netlify" button)
+* Create an account on [https://app.netlify.com/](https://app.netlify.com/) website.
+* Add site with "New site from Git" button.
+* Choose the hosting service for the project.
+* Choose the repository.
+* In **Build commande**, do "**npm run build && nuxt generate**".
+* Push the "Deploy site" button.
+* Click on "Domain settings" button.
+* Click on "Options" button, "Edit site name" and choose a domain name. For add an a custom domain name, click on "Add custom domain".
+
+### Netlify environnement
+
+If there are entries in the ".env" file of the project, they will have to be copied into Netlify.
+
+* Click on "Site settings", "Build & deploy" then "Environment".
+* Click on "Edit variables" then add all environment variables appearing in the ".env" file of the project.
+
+
+### Netlify forms
+
+The blog is Le blog est compatible with NETLIFY forms.
+
+* In Netlify, click on "Forms" tab.
+* In "Active forms" there is an entrance "contact". This is where all the form entries for the "contact" page will be stored.
+* To be notified of each new entry, clickk on the "Settings and usage" button.
+* Click on the "Form notifications" tab then on "Add notifications".
+
+**With each entry, you will be notified by email, webhook or Slack.**
