@@ -3,9 +3,10 @@
     <h1 class="mb-11">CONTACT</h1>
     <div class=" lg:flex lg:justify-between lg:items-center lg:w-full">
 
-    <form name="contact" action="" netlify netlify-honeypot="bot-field" class="flex flex-col">
+    <!-- <form name="contact" action="" netlify netlify-honeypot="bot-field" class="flex flex-col"> -->
+    <form name="contact" action="" netlify class="flex flex-col">
       <h2 class="mb-5">Formulaire de contact</h2>
-      <label class="hidden">Champs anti robots : <input name="bot-field" /></label>
+      <!-- <label class="hidden">Champs anti robots : <input name="bot-field" /></label> -->
       <label for="name"><input type="name" name="name" id="name" placeholder="Nom" v-model="name"
           class="inputsContact"></label>
       <label for="email"><input type="email" name="email" id="email" placeholder="Email" v-model="email"
