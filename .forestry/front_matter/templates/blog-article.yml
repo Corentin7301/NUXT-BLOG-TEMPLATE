@@ -11,7 +11,10 @@ fields:
   name: description
   label: description
   description: Description pour le SEO.
-- type: file
-  name: urlImage
+- name: urlImage
+  type: text
+  config:
+    required: true
   label: urlImage
   description: Url de l'image d'illustration de l'article.
+  default: https://res.cloudinary.com/corentin7301/image/upload/v1615799454/blog-template/nuxt-blog-template_i25n41.jpg
