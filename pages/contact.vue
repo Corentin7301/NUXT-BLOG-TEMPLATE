@@ -1,9 +1,9 @@
 <template>
-  <div class="container my-0 mx-auto p-2.5 flex flex-col items-center w-6/12 lg:p-0">
+  <div class="container my-0 mx-auto p-2.5 flex flex-col items-center w-6/12 h-full lg:p-0">
     <h1 class="mb-11">CONTACT</h1>
-    <div class=" lg:flex lg:justify-between lg:w-full">
+    <div class=" lg:flex lg:justify-between lg:items-center lg:w-full">
 
-    <form name="contact" action="" netlify netlify-honeypot="bot-field" class="flex flex-col lg:self-start">
+    <form name="contact" action="" netlify netlify-honeypot="bot-field" class="flex flex-col">
       <h2 class="mb-5">Formulaire de contact</h2>
       <label class="hidden">Champs anti robots : <input name="bot-field" /></label>
       <label for="name"><input type="name" name="name" id="name" placeholder="Nom" v-model="name"
@@ -14,7 +14,7 @@
           class="inputsContact h-52 w-80 font-quicksand lg:w-1/3"></textarea></label>
       <Button type="submit">Envoyer</Button>
     </form>
-    <img :src="this.$global.mainImage" :alt="this.$global.siteName" class=" hidden rounded-xl lg:block">
+    <img :src="this.$global.mainImage" :alt="this.$global.siteName" class=" hidden rounded-xl w-3/5 lg:block">
     </div>
   </div>
 </template>

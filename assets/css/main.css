@@ -27,7 +27,7 @@ html {
 
 body {
    /* margin: 0; */
-  background-color: #606f7b;
+  @apply bg-backgroundColor;
 }
 
  /* *,
