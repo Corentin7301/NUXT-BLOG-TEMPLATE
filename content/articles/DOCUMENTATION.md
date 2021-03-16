@@ -106,7 +106,7 @@ Il apparaîtra dans la **configuration des cards de partage social**.
 
 Il est utilisé dans la **page ArticleList.vue**, **ArticlePagination.vue** et dans **getContent.js**.
 
-* #### **blog.displayNumberOfArticles** : Affichage du nombre d'articles total dans l'onglet blog (_page.vue). true = Afficher | false = NE PAS afficher.
+* #### **blog.displayNumberOfArticles** : Affichage du nombre d'articles total dans l'onglet blog (_page.vue). **true** = Afficher | **false** = NE PAS afficher.
 
 Il est utilisé dans la **page _page.vue**.
 
@@ -120,12 +120,16 @@ Il est utilisé dans la **page _page.vue**.
 
 * #### **style.colors.darkColor** : Couleur sombre du site. EN HEXADECIMAL Exemple : #41414141.
 
+**Pour sauvegarder les modifications il suffit de "commit" et "push".**
+
 
 ## Contenu :
 
 ## Ecrire un article :
 
 * ### Avec les fichiers .md :
+
+**DANS LE DOSSIER /content/articles**
 
   * Ecrire selon la [syntaxe Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
@@ -141,6 +145,7 @@ Il est utilisé dans la **page _page.vue**.
   Il est possible d'en avoir l'exemple dans les fichiers Exemple 1 - 12.
 
   * Supprimez les fichiers Exemple 1 - 12.
+  * Pour sauvegarder les modifications il suffit de "commit" et "push".
 
 * ### Avec Forestry.io :
 
@@ -376,12 +381,14 @@ It will appear in the **_page.vue page**.
 
 * #### **style.colors.darkColor** : Dark site color. EN HEXADECIMAL Example : #41414141.
 
-
+**To save the modifications, just "commit" and "push".**
 ## Content :
 
 ## Write an article :
 
 * ### With .md files :
+
+**IN THE /content/articles FOLDER**
 
   * Write according to [Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
@@ -397,6 +404,7 @@ It will appear in the **_page.vue page**.
   It's possible to have an example in 1 - 12 Example files.
 
   * Delete 1 - 12 Example files.
+  * To save the modifications, just "commit" and "push".
 
 * ### With Forestry.io :
 
