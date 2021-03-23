@@ -154,6 +154,7 @@ export default {
   css: ['~/assets/css/main.css', '~/assets/css/colors.css', '~/assets/css/utility.css', '~/assets/css/scrollbar.css', '~/assets/css/transition.css', '~/assets/css/tailwind.css'],
   plugins: [
     { src: '@/plugins/variables.js' },
+    {src: '@/plugins/Vuelidate'},
   ],
   // auto import des comp.
   components: true,
