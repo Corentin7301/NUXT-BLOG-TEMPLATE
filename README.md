@@ -78,6 +78,10 @@ Il apparaîtra dans **la page blog (_page.vue)**.
 
 Il apparaîtra dans **la page contact**.
 
+* #### **contactRedirectMessage** : Message de la page de remerciement lors de la soumission du formulaire. Exemple : "Merci pour votre message ! Nous vous répondrons dès que possible."
+
+Il apparaîtra dans **la page thanks**.
+
 * #### **twitterUrl** : Url du compte Twitter. Exemple : "https://twitter.com/CorentinPerroux"
 
 Il apparaîtra dans la **configuration de la social card de twitter**.
@@ -338,6 +342,10 @@ It will appear in **blog page (_page.vue)**.
 * #### **contactMetaDescription** : Contact page meta-description. Example : "CONTACT of NUXT-BLOG-TEMPLATE by Corentin PERROUX"
 
 It will appear in **contact page**.
+
+* #### **contactRedirectMessage** : Thank you page message when submitting the form. Example : "Thank you for your message ! We will answer you as soon as possible."
+
+It will appear in **thanks page**.
 
 * #### **twitterUrl** : Twitter account url. Example : "https://twitter.com/CorentinPerroux"
 
