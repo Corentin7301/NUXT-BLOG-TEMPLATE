@@ -10,7 +10,7 @@
       </NuxtLink>
     </div>
       
-      <ArticlePagination v-if="total > this.$global.blog.articleCountPerPage" :total="total" />
+      <ArticlePagination :total="total" />
   </div>
 </template>
 
