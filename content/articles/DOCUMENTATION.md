@@ -1,13 +1,3 @@
----
-    # MAKE TITLE OF ARTICLE
-title: DOCUMENTATION
-    # MAKE DESCRIPTION OF ARTICLE
-description: DOCUMENTATION of NUXT-BLOG-TEMPLATE by Corentin PERROUX
-    # MAKE URL OF ILLUSTRATION IMAGE
-urlImage: https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-production/3075/nuxtjs-2.jpg
-
----
-
 # NUXT BLOG TEMPLATE
 
 ## Made by [Corentin PERROUX](https://github.com/Corentin7301)
@@ -16,9 +6,17 @@ urlImage: https://madewithnetwork.ams3.cdn.digitaloceanspaces.com/spatie-space-p
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Corentin7301/NUXT-BLOG-TEMPLATE"><img src="https://camo.githubusercontent.com/417d890ba67c98ad5856b715343a61cdbf07d72b9bd5b79dd45d43de634c29ea/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f6465706c6f792f627574746f6e2e737667" alt="netlify deploy button"></a>
 
-**Si le repository créé est vide utilisez le bouton "Use this template" de Github.**
+**Si le repository créé est vide utilisez le bouton "Use this template" de Github. Si vous préférez importer le projet sur Forestry, utilisez le buton ci-dessous.**
 
-If the created repository is empty use the "Use this template" button of Github.
+If the created repository is empty use the "Use this template" button of Github. If you prefer to import the project to Forestry, use the button below.
+
+## DEPLOY ON FORESTRY :
+
+**Si vous avez déjà utilisé le bouton "Deploy to Netlify" et que le repository créé n'est pas vide, n'utilisez pas ce bouton.**
+
+If you have already used the "Deploy to Netlify" button and the created repository is not empty, do not use this button.
+
+[![Import this project into Forestry](https://assets.forestry.io/import-to-forestry.svg)](https://app.forestry.io/quick-start?repo=corentin7301/nuxt-blog-template&engine=other&branch=main)
 
 ## REPO-NAME: https://github.com/Corentin7301/NUXT-BLOG-TEMPLATE
 
