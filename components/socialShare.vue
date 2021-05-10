@@ -39,11 +39,11 @@
 <style lang="scss" scoped>
 
   .socialShare {
-    @apply text-xl mt-0 mr-0 mb-4 ml-1 text-primaryColor transition-all
+    @apply text-xl mt-0 mr-0 mb-4 ml-1 text-primaryColor transition-all;
   }
 
   .socialShare:hover {
-    @apply text-lightColor
+    @apply text-lightColor;
   }
 
 </style>

@@ -43,6 +43,6 @@ data() {
 
 <style lang="scss" scoped>
       .fixedElement {
-        @apply fixed w-6 h-6 bottom-12 right-8 z-50 cursor-pointer text-primaryColor
+        @apply fixed w-6 h-6 bottom-12 right-8 z-50 cursor-pointer text-primaryColor;
       }
 </style>

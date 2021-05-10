@@ -163,6 +163,10 @@ export default {
     '@nuxtjs/tailwindcss',
   ],
 
+  // tailwindcss: {
+  //   jit: true
+  // },
+
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
